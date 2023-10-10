@@ -8,4 +8,14 @@ Davi Nascimento Andrade da Silva - 2023038817
 Lucas Abreu Velloso - 2023038795
 Lucas Monteiro Henriques- 2023038868
 
-Tema : sistema de automação residencial com foco principal na ...,escolhemos essa temática devido ao seu abundante crescimento no mercado, a constante dependencia do ser humano por  e relação com o nosso curso ,engenharia de controle e automação, 
+Nos últimos anos, houve o surgimento e crescimento explosivo da indústria 4.0 e ainda mais na pandemia,
+houve grande desenvolvimento e popularização das tecnologias da informação, que tomaram papéis importan-
+tes em todas as áreas de consumo, auxiliando as pessoas a resolverem diversos problemas e a melhorar a 
+qualidade de vida. Uma das novas aplicações que surgiu nesse crescimento foi a automação residencial, atra-
+vés de soluções de engenharia de controle e automação, que permite controlar diversos aspectos de uma casa
+de forma automático, como iluminação, temperatura, segurança, etc.
+
+Tendo em vista a relevância do tópico apresentado e a proximidade com nossa área de estudo no curso, decidimos
+realizar esse trabalho com o objetivo de desenvolver um sistema de automação residencial, para controlar e
+automatizar vários aspectos de uma casa comum, como controlar ativação de luzes, abertura de cortinas, ar
+condicionado, ativação e controle de eletrodomésticos etc.
