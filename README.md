@@ -1,3 +1,3 @@
 # TP-PDS2
-teste breno
+teste breno/lucas
 Trabalho prático da disciplina PDS2, sistema de automação residencial 
