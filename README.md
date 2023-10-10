@@ -8,4 +8,4 @@ Davi Nascimento Andrade da Silva - 2023038817
 Lucas Abreu Velloso - 2023038795
 Lucas Monteiro Henriques- 2023038868
 
-Tema : sistema de automação residencial com foco principal na 
+Tema : sistema de automação residencial com foco principal na ...,escolhemos essa temática devido ao seu abundante crescimento no mercado, a constante dependencia do ser humano por  e relação com o nosso curso ,engenharia de controle e automação, 
