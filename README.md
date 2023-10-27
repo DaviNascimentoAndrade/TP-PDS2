@@ -33,7 +33,7 @@ no cômodo quanto na casa,todas as entidades do programa possuem classes de obje
 lógica de programação orientada a objeto. 
 
 3. Estrutura do Projeto:
-O projeto será separado em classes , 7 no total, cada classe irá possuir um arquivo .h e um .cpp,
+O projeto será separado em classes , 7 no total, cada classe irá possuir um arquivo .h e um .cc,
 além de uma main e um código referente ao display do menu.
 Todos os arquivos necessários serão ultilizados ficara disponível no link: https://github.com/DaviNascimentoAndrade/TP-PDS2
 
