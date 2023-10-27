@@ -1,13 +1,13 @@
 #ifndef CORTINA_H
 #define CORTINA_H
 
-#include <string> // Você precisa incluir a biblioteca <string> para usar strings.
+#include <string> 
 
 using namespace std;
 class Cortina {
 public:
     // Construtor da classe Cortina
-    Cortina(); // Este deve ser um construtor, portanto não precisa do tipo "void".
+    Cortina(); // Construtor
 
     // Configura a quantidade que a cortina está fechada ou aberta.
     // @param novaIntensidade: A nova intensidade da cortina (0-100).
@@ -17,7 +17,7 @@ public:
     int Intensidade();
 
     // Retorna o nome da cortina.
-    string Nome(); // Use string para o tipo de dados string.
+    string Nome(); 
 
     // Muda o nome do dispositivo.
     void SetNome(string novoNome);
