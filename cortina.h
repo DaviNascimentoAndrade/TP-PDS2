@@ -17,14 +17,14 @@ public:
     int Intensidade();
 
     // Retorna o nome da cortina.
-    std::string Nome(); // Use std::string para o tipo de dados string.
+    string Nome(); // Use string para o tipo de dados string.
 
     // Muda o nome do dispositivo.
-    void SetNome(std::string novoNome);
+    void SetNome(string novoNome);
 
 private:
     int intensidade_cortina;
-    std::string nome; 
+    string nome; 
 };
 
 #endif
