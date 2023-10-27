@@ -17,7 +17,7 @@ melhorarem a qualidade de vida. Uma das novas aplicações que surgiu nesse cres
 residencial, atra- vés de soluções de engenharia de controle e automação, que permite controlar diversos
 aspectos de uma casa de forma automática, como iluminação, temperatura, segurança, etc.
 
-A falta de automação residencial pode gerer diversas problematicas como falta de conectividade e eprsonalização ,
+A falta de automação residencial pode gerer diversas problematicas como falta de conectividade e personalização ,
 conforto e segurnaça comprometido,além de ineficiencia energetica e consequentimente mais gastos financeiros.
 
 Tendo em vista a relevância do tópico apresentado e a proximidade com nossa área de estudo no curso, decidimos 
