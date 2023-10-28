@@ -1,55 +1,48 @@
-#ifndef __DICIONARIO_H__
-#define __DICIONARIO_H__
+#ifndef ARCONDICIONADO_H_
+#define ARCONDICIONADO_H_
 
-#include <list>
-#include <string>
+#include<iostream>
 
-using std::list;
-using std::string;
+using namespace std;
 
-// Implementa um dicionário que mapeia uma chave (do tipo string)
-// a um valor (também do tipo string).
-// As chaves são únicas, e estão dispostas em qualquer ordem na lista. 
-class Dicionario {
- public:
-  // Cria um dicionário vazio.
-  Dicionario();
+class ArCondicionado {
 
-  // Retorna quantos pares chave/valor estão no dicionário.
-  int tamanho();
+    public:
 
-  // Testa se uma chave pertence ao dicionário.
-  bool pertence(string chave);
+        // cria um novo arcondicionado sem nome
+        ArCondicionado();
 
-  // Retorna a *menor* chave do dicionário.
-  // Pré-condição: o dicionário não está vazio.
-  string menor();
+        // coloca um nome para o ar condicionado
+        void SetNome(string nm);
 
-  // Retorna o valor associado a chave.
-  // Pré-condição: a chave *necessariamente* está no dicionário.
-  string valor(string chave);
+        // retorna o nome do ar condicionado
+        string Nome();
 
-  // Insere um par chave/valor no dicionário.
-  // Pré-condição: a chave *não* está no dicionário.
-  void Inserir(string chave, string valor);
+        // muda intensidade do ar condicionado
+        void SetIntensidade(int in);
 
-  // Remove um par chave/valor do dicionário.
-  // Pré-condição: a chave *necessariamente* está no dicionário.
-  void Remover(string chave);
+        // retorna intensidade do ar condicionado
+        int Intensidade();
 
-  // Altera o valor associado a uma chave do dicionário.
-  // Pré-condição: a chave *necessariamente* está no dicionário.
-  void Alterar(string chave, string valor);
+        // liga ou desliga o ar condicionado(0 desligado)
+        void SetLigar(bool li);
 
-  // Libera toda a memória alocada para armazenar os dados no
-  // dicionário.
-  ~Dicionario();
- private:
-  struct Elemento {
-    string chave; // Identificar do elemento.
-    string valor; // Valor associado ao elemento.
-  };
-  // Lista de elementos, ou seja, lista de pares chave/valor.
-  list<Elemento> elementos_;
+        // retorna status da tranca da janela
+        bool Ligado();
+
+        // configura temperatura do ar-condicionado.Precondição:a temperatura deve ter valor entre 16 e 30
+        void SetTemperatura(int temp); 
+        
+        
+        //retorna temperatura do ar condiciona
+        int Temperatura ();
+
+
+    private:
+        int temperatura;
+        bool ligado;
+        int intensidade;
+        string nome;
 };
-#endif // __DICIONARIO_H__
+
+#endif ARCONDICIONADO_H_
