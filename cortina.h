@@ -1,5 +1,5 @@
-#ifndef CORTINA_H
-#define CORTINA_H
+#ifndef CORTINA_H_
+#define CORTINA_H_
 
 #include <string> 
 
