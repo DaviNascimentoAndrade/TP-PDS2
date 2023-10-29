@@ -1,4 +1,4 @@
-#include "../include/Lampada.h"
+#include "../include/lampada.h"
 
 #include <string>
 #include <iostream>
