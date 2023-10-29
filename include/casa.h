@@ -7,7 +7,7 @@
 
 using namespace std;
 
-class Casa {
+class casa {
 
     public:
 
