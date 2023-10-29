@@ -10,7 +10,7 @@
 #include "Janela.h"
 #include "Cortina.h"
 
-class comodo{
+class Comodo{
 public:
 
 //Cria um comodo vazio
