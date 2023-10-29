@@ -6,7 +6,7 @@
 
 using namespace std;
 
-class ArCondicionado {
+class arcondicionado {
 
     public:
 
