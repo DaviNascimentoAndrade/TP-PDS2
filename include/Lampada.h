@@ -6,11 +6,11 @@
 #include <vector>
 using namespace std;
 
-struct Intensidade_inválida{
+struct Intensidade_invalida{
   int intensidade;
 };
 
-struct Cor_Inválida{
+struct Cor_Invalida{
 string cor;
 };
 
@@ -38,7 +38,7 @@ public:
     void ListarCores();
 
     //Muda o nome do dispositivo;
-    void SetNome(string);
+    void SetNome(string name);
 
     //Retorna o nome do dispositivo.
     string Nome();
@@ -47,6 +47,6 @@ public:
 private:
 string nome, cor;
 int intensidade;
-vector<string> cores ={"amarelo", "vermelho","azul","verde","roxo","branco","laranja"};
+vector<string> cores ={"Amarelo", "Vermelho","Azul","Verde","Roxo","Branco","Laranja"};
 };
 #endif

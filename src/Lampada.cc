@@ -10,7 +10,7 @@ Lampada::Lampada(){
 
 void Lampada::SetIntensidade(int i){
     if(i < 0 || i > 100){
-        throw Intensidade_inválida{i};
+        throw Intensidade_invalida{i};
     }
     else{
        intensidade = i;
@@ -30,9 +30,23 @@ void Lampada::SetCor(string c){
         }
     }
     if(!(valido))
-       throw Cor_Inválida{c};
+       throw Cor_Invalida{c};
 }
 
-string Lampada::StatusCor(){
+string Lampada::Cor(){
     return cor;
+}
+
+void Lampada::ListarCores(){
+  for(auto it = cores.begin(); it != cores.end(); it++){
+    std::cout << *it << endl;
+}
+}
+
+void Lampada::SetNome(string name){
+  nome = name;
+}
+
+string Lampada::Nome(){
+    return nome;
 }
