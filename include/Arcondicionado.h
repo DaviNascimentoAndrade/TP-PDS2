@@ -43,8 +43,8 @@ class ArCondicionado {
     private:
         int temperatura;
         bool ligado;
-        std::string modo;
-        std::string nome;
+        string modo;
+        string nome;
 };
 
 #endif ARCONDICIONADO_H_
