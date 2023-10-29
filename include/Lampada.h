@@ -36,8 +36,8 @@ public:
 
 
 private:
-string nome;
-int intensidade, cor;
+string nome, modo;
+int cor;
 vector <string> cores;
 };
 #endif

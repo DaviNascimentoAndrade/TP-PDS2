@@ -13,16 +13,17 @@ class ArCondicionado {
         ArCondicionado();
 
         // coloca um nome para o ar condicionado
-        void SetNome(string nm);
+        void SetNome(string nome);
 
         // retorna o nome do ar condicionado
         string Nome();
 
-        // muda intensidade do ar condicionado
-        void SetIntensidade(int in);
+        // muda o modo do ar condicionado
+        //PRECONDIÇÃO: Deve ser cool, heat, dry ou fan
+        void SetModo(string modo);
 
-        // retorna intensidade do ar condicionado
-        int Intensidade();
+        // retorna o modo do ar condicionado
+        string Modo();
 
         // liga ou desliga o ar condicionado(0 desligado)
         void SetLigar(bool li);
@@ -30,11 +31,11 @@ class ArCondicionado {
         // retorna status da tranca da janela
         bool Ligado();
 
-        // configura temperatura do ar-condicionado.Precondição:a temperatura deve ter valor entre 16 e 30
+        // configura temperatura do ar-condicionado.
+        //PRECONDIÇÃO:a temperatura deve ter valor entre 16 e 30
         void SetTemperatura(int temp); 
         
-        
-        //retorna temperatura do ar condiciona
+        //retorna temperatura do ar condicionado
         int Temperatura ();
 
 
