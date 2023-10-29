@@ -2,6 +2,7 @@
 #define ARCONDICIONADO_H_
 
 #include<iostream>
+#include <string>
 
 using namespace std;
 
@@ -42,8 +43,8 @@ class ArCondicionado {
     private:
         int temperatura;
         bool ligado;
-        int intensidade;
-        string nome;
+        std::string modo;
+        std::string nome;
 };
 
 #endif ARCONDICIONADO_H_

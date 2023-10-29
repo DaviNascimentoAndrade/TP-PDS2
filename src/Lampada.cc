@@ -5,12 +5,15 @@
 
 using namespace std;
 
+Lampada::Lampada(){   
+}
+
 void Lampada::SetIntensidade(int i){
-    if(i >= 0 || i <= 100){
-        intensidade = i;
+    if(i < 0 || i > 100){
+        throw Intensidade_inválida{i};
     }
     else{
-       std::cout <<"O valor inserido não é válido. Por favor, insira um número de 0 a 100" << endl;
+       intensidade = i;
     }
 }
 
@@ -19,14 +22,15 @@ int Lampada::Intensidade(){
 }
 
 void Lampada::SetCor(string c){
-    if(c == "amarelo" || c == "vermelho" || c == "azul" || c == "roxo"
-     || c == "branco" || c == "laranja" || c == "verde")
-     { 
-        cor = c;
+    bool valido = false;
+    for(auto it = cores.begin(); it != cores.end(); it++){
+        if(c == *it){
+            c == *it;
+            valido = true;
+        }
     }
-    else{
-       std::cout <<"Cor inválida. Por favor, insira uma das cores válidas";
-    }
+    if(!(valido))
+       throw Cor_Inválida{c};
 }
 
 string Lampada::StatusCor(){
