@@ -13,7 +13,7 @@ class Tranca {
         Tranca();
 
         // Muda o nome da tranca
-        void SetNome();
+        void SetNome(string name);
 
         // Retorna o nome da tranca
         string Nome();
