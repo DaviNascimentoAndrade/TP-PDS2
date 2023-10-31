@@ -19,13 +19,13 @@ Comodo();
 //Adiciona um novo dispositivo de algum tipo
 void AdicionarDispositivo(int tipo, string nome);
 
-//Lista todos os dispositivos de um tipo, sendo Lampda,Cortina,Arcondicionado,Tranca e Janela, 1,2,3,4 e 5 respectivamente
+//Lista todos os dispositivos de um tipo, sendo Lampada,Cortina,Arcondicionado,Tranca e Janela, 1,2,3,4 e 5 respectivamente
 void ListarDispositivos(int tipo);
 
-//Remove um dispositivo, de um tipo, do comodo, sendo Lampda,Cortina,Arcondicionado,Tranca e Janela, 1,2,3,4 e 5 respectivamente
+//Remove um dispositivo, de um tipo, do comodo, sendo Lampada,Cortina,Arcondicionado,Tranca e Janela, 1,2,3,4 e 5 respectivamente
 void RemoverDispositivo(int tipo, string nome);
 
-//Configura todos os dispositivos de um mesmo tipo no comodo, sendo Lampda,Cortina,Arcondicionado,Tranca e Janela, 1,2,3,4 e 5 respectivamente
+//Configura todos os dispositivos de um mesmo tipo no comodo, sendo Lampada,Cortina,Arcondicionado,Tranca e Janela, 1,2,3,4 e 5 respectivamente
 void ConfigurarTodos(int tipo);
 
 //Configura o nome do comodo;
