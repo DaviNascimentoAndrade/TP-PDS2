@@ -6,6 +6,7 @@
 using namespace std;
 
 Lampada::Lampada(){
+  intensidade_ = 0;
 }
 
 void Lampada::SetIntensidade(int i){
