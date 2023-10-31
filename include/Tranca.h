@@ -7,27 +7,27 @@ using namespace std;
 
 class Tranca {
 
-    public:
+  public:
 
-        // Cria uma traca sem nome
-        Tranca();
+// Cria uma traca sem nome
+Tranca();
 
-        // Muda o nome da tranca
-        void SetNome();
+// Muda o nome da tranca
+ void SetNome();
 
-        // Retorna o nome da tranca
-        string Nome();
+// Retorna o nome da tranca
+string Nome();
 
-        // Muda estado de ativação da tranca
-        void SetAtiva(bool at);
+// Muda estado de ativação da tranca
+void SetAtiva(bool ativo);
 
-        // Retorna estado de ativação da tranca
-        bool Ativa();
+// Retorna estado de ativação da tranca
+bool Ativa();
     
-    private:
+private:
 
-        string nome;
-        bool ativa;
+string nome;
+bool ativa;
 
 };
 
