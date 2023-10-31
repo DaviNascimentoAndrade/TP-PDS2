@@ -26,8 +26,8 @@ bool Ativa();
     
 private:
 
-string nome;
-bool ativa;
+string nome_;
+bool ativa_;
 
 };
 
