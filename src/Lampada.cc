@@ -9,32 +9,32 @@ Lampada::Lampada(){
 }
 
 void Lampada::SetIntensidade(int i){
-    if(i < 0 || i > 100){
-        throw Intensidade_invalida{i};
+  if(i < 0 || i > 100){
+    throw Intensidade_invalida{i};
     }
-    else{
-       intensidade = i;
+  else{
+    intensidade = i;
     }
 }
 
 int Lampada::Intensidade(){
-    return intensidade;
+  return intensidade;
 }
 
 void Lampada::SetCor(string c){
-    bool valido = false;
-    for(auto it = cores.begin(); it != cores.end(); it++){
-        if(c == *it){
-            c == *it;
-            valido = true;
-        }
+  bool valido = false;
+  for(auto it = cores.begin(); it != cores.end(); it++){
+    if(c == *it){
+      c == *it;
+      valido = true;
     }
-    if(!(valido))
-       throw Cor_Invalida{c};
+  }
+  if(!(valido))
+    throw Cor_Invalida{c};
 }
 
 string Lampada::Cor(){
-    return cor;
+  return cor;
 }
 
 void Lampada::ListarCores(){
@@ -48,5 +48,5 @@ void Lampada::SetNome(string name){
 }
 
 string Lampada::Nome(){
-    return nome;
+  return nome;
 }
