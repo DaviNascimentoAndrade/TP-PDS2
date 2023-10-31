@@ -25,7 +25,6 @@ void SetAtiva(bool ativo);
 bool Ativa();
     
 private:
-
 string nome_;
 bool ativa_;
 
