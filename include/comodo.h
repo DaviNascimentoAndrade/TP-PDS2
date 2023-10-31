@@ -39,12 +39,17 @@ string Nome();
 
 
 private:
-map<string,Lampada> lampadas;
-map<string,Cortina> cortinas;
-map<string,ArCondicionado> ares_condicionados;
-map<string,Tranca> trancas;
-map<string, Janela> janelas;
-string nome;
+map<string,Lampada> lampadas_;
+map<string,Cortina> cortinas_;
+map<string,ArCondicionado> ares_condicionados_;
+map<string,Tranca> trancas_;
+map<string, Janela> janelas_;
+string nome_;
+class Lâmpada;
+class Cortina;
+class ArCondicionado;
+class Tranca;
+class Janela;
 
 };
 
