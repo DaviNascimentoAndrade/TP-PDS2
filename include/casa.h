@@ -41,9 +41,9 @@ void RemoverComodo(string nm);
 
 private:
 class Comodo;
-map<string, Comodo> comodos;
-map<string, Casa> modos;
-string nome;
+map<string, Comodo> comodos_;
+map<string, Casa> modos_;
+string nome_;
 
 };
 
