@@ -23,8 +23,8 @@ string Nome();
 void SetNome(string novoNome);
 
 private:
-int intensidade_cortina;
-string nome; 
+int intensidade_cortina_;
+string nome_; 
 };
 
 #endif
