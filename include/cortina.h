@@ -16,10 +16,10 @@ void SetIntensidade(int novaIntensidade);
 // Retorna o status de iluminação da cortina.
 int Intensidade();
 
-// Retorna o nome da cortina.
+// Coloca um nome na cortina.
 string Nome(); 
 
-// Muda o nome do dispositivo.
+// Retorna o nome da cortina.
 void SetNome(string novoNome);
 
 private:
