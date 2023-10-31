@@ -40,11 +40,11 @@ void SetTemperatura(int temp);
 int Temperatura ();
 
 
-private:
-int temperatura;
-bool ligado;
-std::string modo;
-std::string nome;
+    private:
+        int temperatura;
+        bool ligado;
+        string modo;
+        string nome;
 };
 
 #endif ARCONDICIONADO_H_

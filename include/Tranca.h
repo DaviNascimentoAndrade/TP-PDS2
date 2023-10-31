@@ -12,8 +12,8 @@ class Tranca {
 // Cria uma traca sem nome
 Tranca();
 
-// Muda o nome da tranca
- void SetNome();
+        // Muda o nome da tranca
+        void SetNome(string name);
 
 // Retorna o nome da tranca
 string Nome();
