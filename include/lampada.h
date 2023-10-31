@@ -45,7 +45,8 @@ string Nome();
 
 
 private:
-string nome, cor;
+string nome;
+string cor;
 int intensidade;
 vector<string> cores ={"Amarelo", "Vermelho","Azul","Verde","Roxo","Branco","Laranja"};
 };
