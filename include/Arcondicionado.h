@@ -39,12 +39,11 @@ void SetTemperatura(int temp);
 //retorna temperatura do ar condicionado
 int Temperatura ();
 
-
-    private:
-    int temperatura_;
-    bool ligado_;
-    string modo_;
-    string nome_;
+private:
+int temperatura_;
+bool ligado_;
+string modo_;
+string nome_;
 };
 
 #endif ARCONDICIONADO_H_
