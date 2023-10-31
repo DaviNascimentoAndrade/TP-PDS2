@@ -50,5 +50,5 @@ void Lampada::SetNome(string name){
 }
 
 string Lampada::Nome(){
-  return nome;
+  return nome_;
 }
