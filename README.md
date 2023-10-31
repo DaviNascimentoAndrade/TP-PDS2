@@ -9,6 +9,8 @@ Davi Nascimento Andrade da Silva - 2023038817;
 Lucas Abreu Velloso - 2023038795;
 Lucas Monteiro Henriques- 2023038868;
 
+O Manual de estilo ultilizado no projeto pode ser acessado pelo link: https://google.github.io/styleguide/cppguide.html#C++_Version
+
 1. Apresentação do Problema:
 
 Nos últimos anos, principalmente durante a pandemia do Covid-19, houve o surgimento e crescimento explosivo da
