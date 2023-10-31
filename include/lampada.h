@@ -29,7 +29,7 @@ int Intensidade ();
 
 //PRECONDIÇÃO: Devem ser inseridas somente cores válidas, como amarelo,vermelho, azul,branco,laranja,verde ou roxo
 //Seta a cor da lãmpada
-void SetCor(int c);
+void SetCor(string c);
 
 //Retorna a cor atual da lâmpada;
 string Cor();
@@ -46,7 +46,7 @@ string Nome();
 
 private:
 string nome_;
-int cor_;
+string cor_;
 int intensidade_;
 vector<string> cores_ ={"Amarelo", "Vermelho","Azul","Verde","Roxo","Branco","Laranja"};
 };
