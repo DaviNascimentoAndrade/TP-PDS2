@@ -5,7 +5,8 @@
 
 using namespace std;
 
-Tranca::Tranca(){   
+Tranca::Tranca(){
+  ativa_=0;
 }
 
 void Tranca::SetNome(string name){
