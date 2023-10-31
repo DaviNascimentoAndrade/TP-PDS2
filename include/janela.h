@@ -32,9 +32,9 @@ bool Tranca();
 
 private:
 
-string nome;
-int intensidade;
-bool tranca;
+string nome_;
+int intensidade_;
+bool tranca_;
 };
 
 #endif JANELA_H_
