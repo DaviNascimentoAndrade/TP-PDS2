@@ -41,10 +41,10 @@ int Temperatura ();
 
 
     private:
-        int temperatura;
-        bool ligado;
-        string modo;
-        string nome;
+        int temperatura_;
+        bool ligado_;
+        string modo_;
+        string nome_;
 };
 
 #endif ARCONDICIONADO_H_
