@@ -1,11 +1,11 @@
-#include "../include/lampada.h"
+#include "lampada.h"
 
 #include <string>
 #include <iostream>
 
 using namespace std;
 
-Lampada::Lampada(){   
+Lampada::Lampada(){
 }
 
 void Lampada::SetIntensidade(int i){
@@ -25,15 +25,16 @@ void Lampada::SetCor(string c){
   bool valido = false;
   for(auto it = cores.begin(); it != cores.end(); it++){
     if(c == *it){
-      c == *it;
+      cor = *it;
       valido = true;
     }
   }
-  if(!(valido))
+  if(!(valido)){
     throw Cor_Invalida{c};
 }
+}
 
-string Lampada::Cor(){
+string Lampada::Cor() {
   return cor;
 }
 
