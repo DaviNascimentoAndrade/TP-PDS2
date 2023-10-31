@@ -16,20 +16,8 @@ public:
 //Cria um comodo vazio
 Comodo();
 
-//Adiciona um dispositivo da classe Lampada
-void AdicionarLampada(string nome, string cor, int intensidade);
-
-//Adiciona um dispositivo da classe Cortina
-void AdicionarCortina(string nome,int intensidade);
-
-//Adiciona um dispositivo da classe Arcondicionado
-void AdicionarArcondicionado(string nome, int temperatura, string modo,bool ligado);
-
-//Adiciona um dispositivo da classe  Tranca
-void AdicionarTranca(string nome, bool ativa);
-
-//Adiciona um dispositivo da classe Janela
-void AdicionarJanela(string nome, int intensidade, bool trancada);
+//Adiciona um novo dispositivo de algum tipo
+void AdicionarDispositivo(int tipo, string nome);
 
 //Lista todos os dispositivos de um tipo, sendo Lampda,Cortina,Arcondicionado,Tranca e Janela, 1,2,3,4 e 5 respectivamente
 void ListarDispositivos(int tipo);
