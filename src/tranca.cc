@@ -9,17 +9,17 @@ Tranca::Tranca(){
 }
 
 void Tranca::SetNome(string name){
-  nome=name;
+  nome_=name;
 }
 
 string Tranca::Nome(){
-  return nome;
+  return nome_;
 }
 
 void Tranca::SetAtiva(bool at){
-  ativa=at;    
+  ativa_=at;    
 }
 
 bool Tranca::Ativa(){
-  return ativa;
+  return ativa_;
 }
