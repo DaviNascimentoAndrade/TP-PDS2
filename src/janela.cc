@@ -14,6 +14,11 @@ void Janela::SetNome(string nm){
     nome_ = nm;
 }
 
+// retorna nome da janela
+string Janela::Nome(){
+    return nome_;
+}
+
 // muda intensidade da abertura da janela
 void Janela::SetIntensidade(int in){
     intensidade_ = in;
