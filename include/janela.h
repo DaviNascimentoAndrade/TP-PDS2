@@ -37,4 +37,4 @@ int intensidade_;
 bool tranca_;
 };
 
-#endif JANELA_H_
+#endif
