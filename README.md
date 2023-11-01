@@ -38,7 +38,7 @@ lógica de programação orientada a objeto.
 3. Estrutura do Projeto:
 O projeto será separado em classes , 7 no total, cada classe irá possuir um arquivo .h e um .cc,
 além de uma main e um código referente ao display do menu.
-Todos os arquivos necessários serão ultilizados ficara disponível no link: https://github.com/DaviNascimentoAndrade/TP-PDS2
+Todos os arquivos necessários e que serão ultilizados ficara disponível no link: https://github.com/DaviNascimentoAndrade/TP-PDS2
 
 4. Instruções de Instalação:
  O usuário precisará de:
