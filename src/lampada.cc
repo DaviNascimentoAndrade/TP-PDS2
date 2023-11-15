@@ -11,7 +11,7 @@ Lampada::Lampada(){
 
 void Lampada::SetIntensidade(int i){
   if(i < 0 || i > 100){
-    throw Intensidade_invalida{i};
+    cout<< "A intensidade deve estar entre 0 e 100"<<endl;
     }
   else{
     intensidade_ = i;
@@ -31,7 +31,7 @@ void Lampada::SetCor(string c){
     }
   }
   if(!(valido)){
-    throw Cor_Invalida{c};
+    cout<< "Cor inválida, consulte as cores disponíveis"<<endl;
 }
 }
 

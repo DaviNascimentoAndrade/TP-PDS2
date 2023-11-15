@@ -21,7 +21,12 @@ string Janela::Nome(){
 
 // muda intensidade da abertura da janela
 void Janela::SetIntensidade(int in){
-    intensidade_ = in;
+    if(in < 0 || in > 100){
+        cout<< "A intensidade deve estar entre 0 e 100"<<endl;
+    }
+    else{
+        intensidade_ = in;
+    }
 }
 
 // retorna intensidade da janela
