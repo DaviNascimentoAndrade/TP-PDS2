@@ -1,8 +1,9 @@
-#ifndef Casa_H_
-#define Casa_H_
+#ifndef CASA_H_
+#define CASA_H_
 
 #include<iostream>
 #include<map>
+#include "comodo.h"
 #include<string>
 
 using namespace std;
@@ -40,11 +41,10 @@ void RemoverComodo(string nm);
 
 
 private:
-class Comodo;
 map<string, Comodo> comodos_;
 map<string, Casa> modos_;
 string nome_;
 
 };
 
-#endif Casa_H_
+#endif // CASA_H_

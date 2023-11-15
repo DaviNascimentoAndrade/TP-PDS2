@@ -1,4 +1,4 @@
-#include "../include/arcondicionado.h"
+#include "../include/ar_condicionado.h"
 
 #include <string>
 #include <iostream>
@@ -14,8 +14,7 @@ using namespace std;
   return nome_;
  }
  void ArCondicionado::SetModo(string modo){
-  if(modo == "cool" || modo == "heat" || modo == "dry"
-  || modo == "fan"){
+  if(modo == "cool" || modo == "heat" || modo == "dry" || modo == "fan"){
   modo_ = modo;
   }
   else{

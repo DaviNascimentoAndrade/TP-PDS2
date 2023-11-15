@@ -46,4 +46,4 @@ string modo_;
 string nome_;
 };
 
-#endif ARCONDICIONADO_H_
+#endif // ARCONDICIONADO_H_

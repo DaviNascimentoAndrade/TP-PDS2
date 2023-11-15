@@ -50,4 +50,4 @@ string cor_;
 int intensidade_;
 vector<string> cores_ ={"Amarelo", "Vermelho","Azul","Verde","Roxo","Branco","Laranja"};
 };
-#endif
+#endif // LAMPADA_H_

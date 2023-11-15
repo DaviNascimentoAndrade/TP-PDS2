@@ -27,4 +27,4 @@ int intensidade_cortina_;
 string nome_; 
 };
 
-#endif
+#endif // CORTINA_H_

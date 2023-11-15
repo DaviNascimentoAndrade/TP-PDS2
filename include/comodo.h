@@ -3,12 +3,11 @@
 
 #include <map>
 #include <string>
-#include "Casa.h"
-#include "Lampada.h"
-#include "ArCondicionado.h"
-#include "Tranca.h"
-#include "Janela.h"
-#include "Cortina.h"
+#include "lampada.h"
+#include "ar_condicionado.h"
+#include "tranca.h"
+#include "janela.h"
+#include "cortina.h"
 
 class Comodo{
 public:
@@ -45,13 +44,8 @@ map<string,ArCondicionado> ares_condicionados_;
 map<string,Tranca> trancas_;
 map<string, Janela> janelas_;
 string nome_;
-class Lâmpada;
-class Cortina;
-class ArCondicionado;
-class Tranca;
-class Janela;
 
 };
 
 
-#endif COMODO_H_
+#endif // COMODO_H_

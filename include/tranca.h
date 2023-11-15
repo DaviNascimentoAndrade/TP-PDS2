@@ -30,4 +30,4 @@ bool ativa_;
 
 };
 
-#endif TRANCA_H_
+#endif // TRANCA_H_
