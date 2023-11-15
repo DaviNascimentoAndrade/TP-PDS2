@@ -24,9 +24,6 @@ string Nome();
 //Lista todos os cômodos da casa;
 void ListarComodos(); 
         
-//Enquanto essa função estiver ativa, o usuário pode configurar todos os dispositivos da casa normalmente e todas as configurações feitas serão salvas em um modo;
-void ConfigurarModo(string nm); 
-        
 //Aplica as conficurações de um modo salvo;
 void AtivarModo (string nm);  
         
