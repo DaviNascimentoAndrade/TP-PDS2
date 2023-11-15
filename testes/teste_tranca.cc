@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "include/tranca.h"
+#include "../include/tranca.h"
 
 //Pra testar a tranca
 

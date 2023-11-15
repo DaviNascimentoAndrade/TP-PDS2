@@ -1,6 +1,6 @@
 #include<iostream>
 #include<string>
-#include "include/cortina.h"
+#include "../include/cortina.h"
 
 using namespace std;
 

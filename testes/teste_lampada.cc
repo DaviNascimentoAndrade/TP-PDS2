@@ -1,4 +1,4 @@
-#include "include/lampada.h"
+#include "../include/lampada.h"
 #include <iostream>
 
 using namespace std;

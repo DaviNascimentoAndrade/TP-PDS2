@@ -1,5 +1,5 @@
 #include<iostream>
-#include "include/janela.h"
+#include "../include/janela.h"
 
 using namespace std;
 
