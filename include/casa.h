@@ -38,7 +38,8 @@ void ListarModos();
 //Adiciona um cômodo para que o usuário possa edita-lo;
 void AdicionarComodo(string nm); 
        
-//Apaga um cômodo e todos os dispositivos nele; 
+//Apaga um cômodo e todos os dispositivos nele;
+//Precondiçao: deve haver no minimo um comodo
 void RemoverComodo(string nm);
 
 
