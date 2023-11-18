@@ -22,6 +22,7 @@ void AdicionarDispositivo(int tipo, string nome);
 void ListarDispositivos(int tipo);
 
 //Remove um dispositivo, de um tipo, do comodo, sendo Lampada,Cortina,Arcondicionado,Tranca e Janela, 1,2,3,4 e 5 respectivamente
+//Precondição: o dispositivo deve existir para que ele possa ser removido
 void RemoverDispositivo(int tipo, string nome);
 
 //Configura todos os dispositivos de um mesmo tipo no comodo, sendo Lampada,Cortina,Arcondicionado,Tranca e Janela, 1,2,3,4 e 5 respectivamente
