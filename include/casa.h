@@ -4,6 +4,11 @@
 #include<iostream>
 #include<map>
 #include "comodo.h"
+#include "lampada.h"
+#include "ar_condicionado.h"
+#include "tranca.h"
+#include "janela.h"
+#include "cortina.h"
 #include<string>
 
 using namespace std;
