@@ -13,16 +13,16 @@ using namespace std;
  string ArCondicionado::Nome(){
   return nome_;
  }
- void ArCondicionado::SetModo(string modo){
-  if(modo == "cool" || modo == "heat" || modo == "dry" || modo == "fan"){
-  modo_ = modo;
+ void ArCondicionado::SetIntensidade(int in){
+  if(in >= 0 && in <= 100){
+  intensidade_ = in;
   }
   else{
-  cout << "Modo inválido. Por favor, insira um dos modos válidos";
+  cout << "Intensidade inválida, selecione um valor de 0 a 100";
   }
  }
- string ArCondicionado::Modo(){
-  return modo_;
+ int ArCondicionado::Intensidade(){
+  return intensidade_;
  }
  void ArCondicionado::SetLigar(bool li){
   ligado_ = li;

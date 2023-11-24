@@ -174,16 +174,16 @@ using namespace std;
          bool l;
          cout<<"Digite true para ligar o ar condicionado ou false para desligar: ";
          cin>>l;
-         string y;
-         cout<<"Digite o modo do ar condicionado: ";
-         cin>>y;
+         int i;
+         cout<<"Digite a intensidade do ar condicionado: ";
+         cin>>i;
          int x;
          cout<<"Digite a temperatura do ar condicionado: ";
          cin>>x;      
         for(auto it : ares_condicionados_){
               if(it.second.Ligado() == true){
                 it.second.SetLigar(true);
-                it.second.SetModo(y);
+                it.second.SetIntensidade(i);
                 it.second.SetTemperatura(x);
               }
           }
