@@ -16,11 +16,11 @@ Menu principal:
       Voltar
 
       Dispositivo específico:
-        configs()
-        Adicionar()
-        Remover()
-        Configurar todos()
-        (listar dispositivos)
+        Configurar dispositivo
+        Configurar todos
+        Adicionar dispositivo
+        Remover dispositivo
+        Listar dispositivos do comodo
         Voltar
 
   Modos:
