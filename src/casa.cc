@@ -16,7 +16,7 @@ void Casa::SetNome(string nm){
 string Casa::Nome(){
   return nome_;
 }
-////Lista todas os Comodos presentes em Casa 
+//Lista todas os Comodos presentes em Casa 
 void Casa::ListarComodos(){
   for(auto it : comodos_){
     cout << "Cômodo: "<< it.first << endl;
