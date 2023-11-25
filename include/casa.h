@@ -42,10 +42,10 @@ class Casa {
     //Precondiçao: deve haver no minimo um comodo
     void RemoverComodo(string nm);
 
-
-  private:
     map<string, Comodo> comodos_;
     map<string, Casa> modos_;
+
+  private:
     string nome_;
 
 };

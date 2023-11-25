@@ -35,13 +35,14 @@ class Comodo{
     //Retorna o nome do Comodo
     string Nome();
 
-  private:
-
     map<string,Lampada> lampadas_;
     map<string,Cortina> cortinas_;
     map<string,ArCondicionado> ares_condicionados_;
     map<string,Tranca> trancas_;
     map<string, Janela> janelas_;
+
+  private:
+
     string nome_;
 };
 
