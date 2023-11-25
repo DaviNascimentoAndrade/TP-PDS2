@@ -16,20 +16,22 @@ Menu principal:
       Voltar
 
       Dispositivo específico:
-        configs()
-        Adicionar()
-        Remover()
-        Configurar todos()
-        (listar dispositivos)
+        Configurar dispositivo
+        Configurar todos
+        Adicionar dispositivo
+        Remover dispositivo
+        Listar dispositivos do comodo
         Voltar
 
   Modos:
-    Adicionar modo()
-    Ativar modo()
-    Remover modo()
-    Configurar modo
+    Adicionar modo() - criar no main (usar funções do map)
+    Ativar modo() - tem na casa
+    Remover modo() - criar no main (usar funções do map)
+    Configurar modo - usar a função MenuComodos
     (ListarModos)
     Voltar
+
+    IMPORTANTE: quanto criar o modo, passa pra ele só o map dos comodos da casa, e não o map de modos
 
     Config. modo:
       Comodos()
@@ -80,7 +82,7 @@ int main(){
   while (esc != 3){
 
     system("clear");
-    Titulo("MENU PRINCIPAL");
+    Titulo("MENU PRINCIPAL - "+ casa.Nome());
     cout<<"  1 - Menu de comodos\n";
     cout<<"  2 - Menu de modos\n";
     cout<<"  3 - Sair\n";
@@ -126,7 +128,7 @@ void MenuComodos(Casa &house){
   while(esc != 4){
 
     system("clear");
-    Titulo("MENU DE COMODOS");
+    Titulo("MENU DE COMODOS - "+ house.Nome());
     cout<<"  1 - Acessar comodo\n";
     cout<<"  2 - Adicionar comodo\n";
     cout<<"  3 - Remover comodo\n";
@@ -190,12 +192,10 @@ void MenuComodo(Casa& house, string comodo){
   while(esc != 3){
 
     system("clear");
-    Titulo("DISPOSITIVOS DE "+ comodo);
-    cout<<"  1 - Configurar dispositivo especifico\n";
-    cout<<"  2 - Configurar todos de um tipo\n";
+    Titulo("COMODO "+ comodo +" - "+ house.Nome());
+    cout<<"  1 - Acessar Dispositivos\n";
+    cout<<"  2 - Mudar nome\n";
     cout<<"  3 - Voltar\n";
-    cout<<"  4 - Voltar\n";
-    cout<<"  5 - Voltar\n";
 
     esc = 0;
     while(esc < 1 || esc > 3){
@@ -224,7 +224,7 @@ void MenuDispositivo(Casa& house, string comodo){
   while(esc != 3){
 
     system("clear");
-    Titulo("COMODO "+ comodo);
+    Titulo("DISPOSITIVOS DE "+ comodo +" - "+ house.Nome());
     cout<<"  1 - Configurar dispositivo\n";
     cout<<"  2 - Adicionar dispositivo\n";
     cout<<"  3 - Voltar\n";
