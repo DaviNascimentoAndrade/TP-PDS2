@@ -4,25 +4,25 @@
 #include <map>
 
 using namespace std;
-
+//Cria um construtor do tipo Casa 
 Casa::Casa(){
 
 }
-
+//Configura o nome para a Casa 
 void Casa::SetNome(string nm){
   nome_ = nm;
 }
-
+//Retorna o nome da casa 
 string Casa::Nome(){
   return nome_;
 }
-
+////Lista todas os Comodos presentes em Casa 
 void Casa::ListarComodos(){
   for(auto it : comodos_){
     cout << "Cômodo: "<< it.first << endl;
     }
 }
-
+// Ativa um modo pre configurado na Casa
 void Casa::AtivarModo(string nm){
     bool existe = false;             //testa se o modo existe
     for(auto it: modos_){
@@ -39,13 +39,13 @@ void Casa::AtivarModo(string nm){
     comodos_ = modos_[nm].comodos_;
 
 }
-
+//Lista os Modos presente na Casa
 void Casa::ListarModos(){
   for(auto it = modos_.begin(); it != modos_.end(); it++){
     cout << it->first;
   }
 }
-
+//Adicionar Comodo a Casa 
 void Casa::AdicionarComodo(string nm){
   bool existe = false;             //testa se o nome já é usado no map
     for(auto it: comodos_){
@@ -60,7 +60,7 @@ void Casa::AdicionarComodo(string nm){
     }
     
 }
-
+//Remove Comodo da Casa
 void Casa::RemoverComodo(string nm){
  bool existe = false;             //testa se existe
     for(auto it: comodos_){
