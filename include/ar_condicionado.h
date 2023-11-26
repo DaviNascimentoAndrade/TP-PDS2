@@ -19,11 +19,10 @@ class ArCondicionado {
     // retorna o nome do ar condicionado
     string Nome();
 
-    // muda o modo do ar condicionado
-    //PRECONDIÇÃO: Deve ser cool, heat, dry ou fan
+    // seta a intensidade
     void SetIntensidade(int in);
 
-    // retorna o modo do ar condicionado
+    // retorna a intensidade
     int Intensidade();
 
     // liga ou desliga o ar condicionado(0 desligado)

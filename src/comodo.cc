@@ -97,7 +97,7 @@ using namespace std;
     //Remove um dispositivo, do tipo Lampada, caso haja o mesmo nome
          for(auto it : lampadas_){
            if(it.first == nome){
-            lampadas_.erase(it.first);
+            lampadas_.erase(nome);
            }
          }
         break;
@@ -147,9 +147,9 @@ using namespace std;
     case 1:{
          int x;
          string y;
-         cout<<"Digite a intensidade da Lampada: ";
+         cout<<"Digite a intensidade da Lampada de 0 a 100: ";
          cin>>x;
-         cout<<"Digite a cor da Lampada: ";
+         cout<<"Digite a cor da Lampada (Amarelo, Vermelho, Azul, Branco, Laranja, Verde ou Roxo):: ";
          cin>>y;
         
         for(auto it : lampadas_){
