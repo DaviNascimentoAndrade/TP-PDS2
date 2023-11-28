@@ -6,14 +6,6 @@
 #include <vector>
 using namespace std;
 
-struct Intensidade_invalida{
-  int intensidade;
-};
-
-struct Cor_Invalida{
-string cor;
-};
-
 class Lampada{
 public:
 

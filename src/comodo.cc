@@ -52,35 +52,46 @@ using namespace std;
     case 1:
         cout<<"Lâmpada:"<<endl;
          for(auto it : lampadas_){
-            cout <<it.first<<endl;
+            cout <<it.first;
+            cout <<"[intensidade: "<<lampadas_[it.first].Intensidade();
+            cout <<", cor: "<<lampadas_[it.first].Cor()<<"]"<<endl;       
          }
         break;
      // Case = 2, imprime todas as Cortinas     
     case 2:
         cout<<"Cortina:"<<endl;   
         for(auto it : cortinas_){
-            cout<<it.first<<endl;
+            cout <<it.first;
+            cout <<"[intensidade: "<<cortinas_[it.first].Intensidade();
+            cout <<"]"<<endl;
          }
         break;
     case 3:
      // Case = 3, imprime todos os Ar condicionados
         cout<<"Ar condicionado:"<<endl;
         for(auto it : ares_condicionados_){
-             cout<<it.first<<endl;
+            cout <<it.first;
+            cout <<"[intensidade: "<<ares_condicionados_[it.first].Intensidade();
+            cout <<", temperatura: "<<ares_condicionados_[it.first].Temperatura();
+            cout <<", status: "<<ares_condicionados_[it.first].Ligado()<<"]"<<endl;
          }
         break;
     case 4:
     // Case = 4, imprime todas as Trancas 
         cout<<"Tranca:"<<endl; 
         for(auto it : trancas_){
-            cout<<it.first<<endl;
+            cout <<it.first;
+            cout <<"[status: "<<trancas_[it.first].Ativa();
+            cout <<"]"<<endl;
          }
         break;  
     case 5:
     // Case = 5, imprime todas as janelas
         cout<<"Janela:"<<endl;
         for(auto it : janelas_){
-           cout<<it.first<<endl; 
+            cout <<it.first;
+            cout <<"[intensidade: "<<janelas_[it.first].Intensidade();
+            cout <<", status da tranca: "<<janelas_[it.first].Tranca()<<"]"<<endl;
          }
         break;          
     default:
@@ -98,41 +109,42 @@ using namespace std;
          for(auto it : lampadas_){
            if(it.first == nome){
             lampadas_.erase(nome);
+            break;
            }
          }
-        break;
+        
     //Remove um dispositivo, do tipo Cortina, caso haja o mesmo nome    
     case 2:
         for(auto it : cortinas_){
            if(it.first == nome){
-            cortinas_.erase(it.first);
+            cortinas_.erase(nome);
+            break;
            }
          }
-        break;
     //Remove um dispositivo, do tipo Ar condicionado, caso haja o mesmo nome    
     case 3:
         for(auto it : ares_condicionados_){
              if(it.first == nome){
-              ares_condicionados_.erase(it.first);
+              ares_condicionados_.erase(nome);
+              break;
             }
          }
-        break;
     //Remove um dispositivo, do tipo Tranca, caso haja o mesmo nome    
     case 4:
         for(auto it : trancas_){
             if(it.first == nome){
-              trancas_.erase(it.first);
+              trancas_.erase(nome);
+              break;
            }
          }
-        break;  
     //Remove um dispositivo, do tipo Janela, caso haja o mesmo nome    
     case 5:
         for(auto it : janelas_){
            if(it.first == nome){
-             janelas_.erase(it.first);
+             janelas_.erase(nome);
+             break;
            }
-         }
-        break;          
+         }      
     default:
     // Tratamento de exceção do tipo 
         cout<<"Tipo invalido"<<endl;
@@ -149,12 +161,12 @@ using namespace std;
          string y;
          cout<<"Digite a intensidade da Lampada de 0 a 100: ";
          cin>>x;
-         cout<<"Digite a cor da Lampada (Amarelo, Vermelho, Azul, Branco, Laranja, Verde ou Roxo):: ";
+         cout<<"Digite a cor da Lampada (Amarelo, Vermelho, Azul, Branco, Laranja, Verde ou Roxo): ";
          cin>>y;
         
         for(auto it : lampadas_){
-        it.second.SetIntensidade(x);
-        it.second.SetCor(y);
+        lampadas_[it.first].SetIntensidade(x);
+        lampadas_[it.first].SetCor(y);
           
         } 
         break;
@@ -165,7 +177,7 @@ using namespace std;
          cout<<"Digite a intensidade da Cortina: ";
          cin>>x;     
         for(auto it : cortinas_){
-            it.second.SetIntensidade(x);
+            cortinas_[it.first].SetIntensidade(x);
          }
         break;
       }
@@ -182,9 +194,9 @@ using namespace std;
          cin>>x;      
         for(auto it : ares_condicionados_){
               if(it.second.Ligado() == true){
-                it.second.SetLigar(true);
-                it.second.SetIntensidade(i);
-                it.second.SetTemperatura(x);
+                ares_condicionados_[it.first].SetLigar(true);
+                ares_condicionados_[it.first].SetIntensidade(i);
+                ares_condicionados_[it.first].SetTemperatura(x);
               }
           }
         break;
@@ -194,17 +206,21 @@ using namespace std;
          cout<<"Digite o modo da tranca : ";
          bool x;
         for(auto it : trancas_){
-            it.second.SetAtiva(x);
+            trancas_[it.first].SetAtiva(x);
          }
         break;  
       } 
      //Configura todos os dispositivos do tipo janela   
     case 5:{
         int x;
+        bool y;
+        cout<<"Digite a config. da tranca (1 fechado, 0 aberto): ";
+        cin>>y; 
         cout<<"Digite a intensidade da Janela: ";
         cin>>x; 
         for(auto it : janelas_){
-           it.second.SetIntensidade(x);
+           janelas_[it.first].SetIntensidade(x);
+           janelas_[it.first].SetTranca(y);
          }
         break;          
     }  

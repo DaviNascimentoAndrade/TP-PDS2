@@ -134,13 +134,20 @@ void Titulo (string titulo) {
     cout<<"==============================================================\n";
     cout<<"\n";
 }
-
+void MsgErro(){
+  bool ex = 0;
+      while(!ex){
+       cout<< " Digite 1 para voltar: ";
+       cin>> ex;
+      }
+}
 // MENU COMODOS
 void MenuComodos(Casa &house){
 
   int esc = 0;
   while(esc != 4){
 
+    esc = 0;
     system("clear");
     Titulo("MENU DE COMODOS - "+ house.Nome());
     cout<<"  1 - Acessar comodo\n";
@@ -335,7 +342,16 @@ void MenuLampada(Comodo& comodo){
     while(esc < 1 || esc > 6){
       cout<<"Digite sua escolha: ";
       cin>>esc;
-      if(esc < 1 || esc > 6){cout<<"Escolha invalida!"<<endl;}
+      if(esc < 1 || esc > 6){
+        cout<<"Escolha invalida!"<<endl;
+        MsgErro();
+      }
+    }
+
+    if((esc == 2 || esc == 4 || esc == 5) && comodo.lampadas_.size() == 0){
+      cout<<"Não há lâmpadas! Escolha inválida!"<<endl;
+      esc = 0;
+      MsgErro();
     }
 
     // listar as lampadas
@@ -399,8 +415,8 @@ void MenuLampada(Comodo& comodo){
         string lampada = "";
         while(!ex){
 
-        cout<<"Digite o nome da lâmpada que deseja remover: ";
-        cin>>lampada;
+          cout<<"Digite o nome da lâmpada que deseja remover: ";
+          cin>>lampada;
       
           for(auto it : comodo.lampadas_){
             if(it.first == lampada){
@@ -440,6 +456,12 @@ void MenuCortina(Comodo& comodo){
       cout<<"Digite sua escolha: ";
       cin>>esc;
       if(esc < 1 || esc > 6){cout<<"Escolha invalida!"<<endl;}
+    }
+
+    if((esc == 2 || esc == 4 || esc == 5) && comodo.cortinas_.size() == 0){
+      cout<<"Não há cortinas! Escolha inválida!"<<endl;
+      esc = 0;
+      MsgErro();
     }
 
     // listar as cortinas
@@ -538,6 +560,12 @@ void MenuArCondicionado(Comodo& comodo){
       cout<<"Digite sua escolha: ";
       cin>>esc;
       if(esc < 1 || esc > 6){cout<<"Escolha invalida!"<<endl;}
+    }
+
+    if((esc == 2 || esc == 4 || esc == 5) && comodo.ares_condicionados_.size() == 0){
+      cout<<"Não há ares! Escolha inválida!"<<endl;
+      esc = 0;
+      MsgErro();
     }
 
     // listar a ar condicionado
@@ -652,6 +680,12 @@ void MenuTrancas(Comodo& comodo){
       if(esc < 1 || esc > 6){cout<<"Escolha invalida!"<<endl;}
     }
 
+    if((esc == 2 || esc == 4 || esc == 5) && comodo.trancas_.size() == 0){
+      cout<<"Não há trancas! Escolha inválida!"<<endl;
+      esc = 0;
+      MsgErro();
+    }
+
     // listar as cortinas
     if(esc == 1){
       bool ex = 0;
@@ -752,6 +786,12 @@ void MenuJanelas(Comodo& comodo){
       cout<<"Digite sua escolha: ";
       cin>>esc;
       if(esc < 1 || esc > 6){cout<<"Escolha invalida!"<<endl;}
+    }
+
+    if((esc == 2 || esc == 4 || esc == 5) && comodo.janelas_.size() == 0){
+      cout<<"Não há janelas! Escolha inválida!"<<endl;
+      esc = 0;
+      MsgErro();
     }
 
     // listar as janelas
@@ -864,7 +904,7 @@ void MenuModos(Casa &house){ //tem que criar esse map de modos ainda
     // Adicionar o modo 
     if(esc == 1){
     string nome_modo="";
-    AdicionarModo(house,nome_modo);
+    //AdicionarModo(house,nome_modo);
     }
 
     // Ativar o modo
@@ -876,7 +916,7 @@ void MenuModos(Casa &house){ //tem que criar esse map de modos ainda
     // Remover o modo
     else if(esc == 3){
     string nome_modo="";
-    RemoverModo(house,nome_modo);
+    //RemoverModo(house,nome_modo);
     }
     
     //Configura o modo
