@@ -93,19 +93,25 @@ int main(){
 
   // MENU PRINCIPAL
   int esc = 0;
-  while (esc != 3){
+  while (esc != 4){
 
+    esc = 0;
     system("clear");
     Titulo("MENU PRINCIPAL - "+ casa.Nome());
     cout<<"  1 - Menu de comodos\n";
     cout<<"  2 - Menu de modos\n";
-    cout<<"  3 - Sair\n";
+    cout<<"  3 - Mudar nome da casa\n";
+    cout<<"  4 - Sair\n";
+
+    if(casa.Nome().size() == 0){
+      cout<<"(Dica: dê um nome para sua casa com a opção n° 3)"<<endl;
+    }
 
     esc = 0;
-    while(esc < 1 || esc > 3){
+    while(esc < 1 || esc > 4){
       cout<<"Digite sua escolha: ";
       cin>>esc;
-      if(esc < 1 || esc > 3){cout<<"Escolha invalida!"<<endl;}
+      if(esc < 1 || esc > 4){cout<<"Escolha invalida!"<<endl;}
     }
 
     // MENU DE COMODOS
@@ -116,6 +122,14 @@ int main(){
     // MENU DE MODOS
     else if(esc == 2){
 
+    }
+
+    // MUDAR NOME
+    else if(esc == 3){
+      string nm;
+      cout<<"Digite o novo nome:";
+      cin>>nm;
+      casa.SetNome(nm);
     }
   }
   return 0;
@@ -167,7 +181,7 @@ void MenuComodos(Casa &house){
 
       if(house.comodos_.size() < 1){
         cout<<"Nao existem comodos, adicione um comodo para usar essta opcao!"<<endl;
-        system("pause");
+        MsgErro();
       }else{
         // LISTAR COMODOS DISPONÍVEIS
         cout<<"Comodos disponiveis: \n";
@@ -901,6 +915,12 @@ void MenuModos(Casa &house){ //tem que criar esse map de modos ainda
       if(esc < 1 || esc > 6){cout<<"Escolha invalida!"<<endl;}
     }
 
+    if((esc == 2 || esc == 4) && house.modos_.size() == 0){
+      cout<<"Não há modos! Escolha inválida!"<<endl;
+      esc = 0;
+      MsgErro();
+    }
+
     // Adicionar o modo 
     if(esc == 1){
     string nome_modo="";
@@ -929,3 +949,5 @@ void MenuModos(Casa &house){ //tem que criar esse map de modos ainda
     }
   }
 }
+
+//Adicionar
