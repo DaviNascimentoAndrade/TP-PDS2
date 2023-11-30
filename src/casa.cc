@@ -21,9 +21,10 @@ string Casa::Nome(){
 
 //Lista todas os Comodos presentes em Casa 
 void Casa::ListarComodos(){
+  cout << "Comôdos: "<<endl;
   for(auto it : comodos_){
-    cout << "Cômodo: "<< it.first << endl;
-    }
+    cout << it.first << endl;
+  }
 }
 
 // Ativa um modo pre configurado na Casa

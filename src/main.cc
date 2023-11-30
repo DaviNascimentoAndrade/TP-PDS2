@@ -148,7 +148,7 @@ FUNÇÕES
 =============================================================================
 */
 
-// TITULO
+// COMODIDADES
 void Titulo (string titulo) {
     cout<<"==============================================================\n";
     cout<<"\t"<< titulo <<"\n";
@@ -156,13 +156,14 @@ void Titulo (string titulo) {
     cout<<"\n";
 }
 void Wait1(){
-  bool ex = 0;
-      while(!ex){
-        ex = 0;
-        cout<< " Digite 1 para voltar: ";
-        cin>> ex;
-      }
+
+  int ex = 0;
+  while(ex != 1){
+    cout<< " Digite 1 para voltar: ";
+    cin>> ex;
+  }
 }
+
 // MENU COMODOS
 void MenuComodos(Casa &house){
 
@@ -191,11 +192,12 @@ void MenuComodos(Casa &house){
     if(esc == 1){
 
       if(house.comodos_.size() < 1){
+
         cout<<"Nao existem comodos, adicione um comodo para usar essta opcao!"<<endl;
         Wait1();
       }else{
+
         // LISTAR COMODOS DISPONÍVEIS
-        cout<<"Comodos disponiveis: \n";
         house.ListarComodos();
         string comodo = "";
 
@@ -203,38 +205,45 @@ void MenuComodos(Casa &house){
         bool ex = 0;
         while(!ex){
 
-        cout<<"Digite o nome do comodo que deseja acessar: ";
-        cin>>comodo;
+          cout<<"Digite o nome do comodo que deseja acessar: ";
+          cin>>comodo;
       
           for(auto it : house.comodos_){
+
             if(it.first == comodo){
              ex = 1;
             }
           }
-          if(!ex){cout<<"Escolha invalida!\n";}
+
+          if(!ex){
+            cout<<"Escolha invalida!\n";
+          }
         }
-      
+
         MenuComodo(house, comodo);
       }
     }
 
     // ADICIONAR COMODO
     else if(esc == 2){
-    string comodo = "";
-    cout <<"Digite o nome do cômodo que deseja adicionar: ";
-    cin>>comodo;
-    house.AdicionarComodo(comodo);
-    house.comodos_[comodo].SetNome(comodo);
+
+      string comodo = "";
+      cout <<"Digite o nome do cômodo que deseja adicionar: ";
+      cin>>comodo;
+      house.AdicionarComodo(comodo);
+      house.comodos_[comodo].SetNome(comodo);
+      cout << "Comôdo " << comodo << " salvo!";
+      Wait1();
     }
 
     // REMOVER COMODO
     else if(esc == 3){
-    if(house.comodos_.size() < 1){
-        cout<<"Nao existem comodos para serem removidos"<<endl;
-        system("pause");
-      }else{
+      if(house.comodos_.size() < 1){
+        cout<<"Nao existem comodos para serem removidos!"<<endl;
+        Wait1();
+      }
+      else{
         // LISTAR COMODOS DISPONÍVEIS PARA REMOVER
-        cout<<"Comodos para remoção: \n";
         house.ListarComodos();
         string comodo = "";
 
@@ -250,12 +259,15 @@ void MenuComodos(Casa &house){
              ex = 1;
             }
           }
-          if(!ex){cout<<"Esse cômodo não existe!\n";}
+          if(!ex){
+            cout<<"Esse cômodo não existe!\n";
+          }
         }
       
         house.RemoverComodo(comodo);
+        cout << "Cômodo " << comodo << " removido!";
+        Wait1();
       }
-
     }
   }
 }
@@ -296,6 +308,9 @@ void MenuComodo(Casa& house, string comodo){
       house.comodos_[novo_nome] = move(house.comodos_[comodo]);
       house.comodos_.erase(comodo);
       comodo = novo_nome;
+
+      cout << "Cômodo " << comodo << " renomeado!";
+      Wait1();
     }  
   }
 }
@@ -369,7 +384,6 @@ void MenuLampada(Comodo& comodo){
       cin>>esc;
       if(esc < 1 || esc > 6){
         cout<<"Escolha invalida!"<<endl;
-        Wait1();
       }
     }
 
@@ -381,64 +395,71 @@ void MenuLampada(Comodo& comodo){
 
     // listar as lampadas
     if(esc == 1){
-      bool ex = 0;
-      while(!ex){
-       comodo.ListarDispositivos(1); 
-       cout<< " Digite 1 para voltar: ";
-       cin>> ex;
-      }
-      
+      cout << "Lâmpadas:" << endl;
+      comodo.ListarDispositivos(1); 
+      Wait1();
     }
     
     //Configurar uma lâmpada
     if(esc == 2){
-       cout<<"Lâmpadas para configurar: \n";
+
+      cout<<"Lâmpadas para configurar: \n";
       comodo.ListarDispositivos(1);
-       string lampada = "";
+      string lampada = "";
 
-        // USUÁRIO ESCOLHE A LAMAPADA QUE QUER ALTERAR
-        bool ex = 0;
-        while(!ex){
+      // USUÁRIO ESCOLHE A LAMAPADA QUE QUER ALTERAR
+      bool ex = 0;
+      while(!ex){
 
-        cout<<"Digite o nome da lãmpadas que deseja configurar: ";
+        cout<<"Digite o nome da lâmpada que deseja configurar: ";
         cin>>lampada;
       
-          for(auto it : comodo.lampadas_){
-            if(it.first == lampada){
-             ex = 1;
-            }
+        for(auto it : comodo.lampadas_){
+          if(it.first == lampada){
+            ex = 1;
           }
-          if(!ex){cout<<"Essa lâmpada não existe!\n";}
         }
-        int intensidade = 0;
-        string cor = "";
-        //setando a intensidade
-        cout<< "Digite a intensidade da lâmpada de 0 a 100: ";
-        cin>>intensidade; //lampada.cc já trata essa excessão
-        comodo.lampadas_[lampada].SetIntensidade(intensidade);
+        if(!ex){cout<<"Essa lâmpada não existe!\n";}
+      }
 
-        //setando a cor
-        cout<< "Digite a cor da lâmpada (Amarelo, Vermelho Azul, Branco, Laranja, Verde ou Roxo): ";
-        cin>>cor;
-        comodo.lampadas_[lampada].SetCor(cor);
+      int intensidade = 0;
+      string cor = "";
+      //setando a intensidade
+      cout<< "Digite a intensidade da lâmpada de 0 a 100: ";
+      cin>>intensidade; //lampada.cc já trata essa excessão
+      comodo.lampadas_[lampada].SetIntensidade(intensidade);
 
+      //setando a cor
+      cout<< "Digite a cor da lâmpada (Amarelo, Vermelho Azul, Branco, Laranja, Verde ou Roxo): ";
+      cin>>cor;
+      comodo.lampadas_[lampada].SetCor(cor);
+
+      cout << "Lâmpada " << lampada << " configurada!";
+      Wait1();
     }
 
     //ADICIONAR LAMPADA
     if(esc == 3){
+
       string nome = "";
       cout<< "Digite o nome da nova lâmpada: ";
       cin>> nome;
       comodo.AdicionarDispositivo(1, nome);
+
+      cout << "Lâmpada " << nome << " salva!";
+      Wait1();
     }
 
     //REMOVER LAMPADA
     if(esc == 4){
+      
+      cout<< "Lâmpadas disponíveis:"<<endl;
       comodo.ListarDispositivos(1);
-     // USUÁRIO ESCOLHE A LAMPADA QUE QUER REMOVER
-        bool ex = 0;
-        string lampada = "";
-        while(!ex){
+
+      // USUÁRIO ESCOLHE A LAMPADA QUE QUER REMOVER
+      bool ex = 0;
+      string lampada = "";
+      while(!ex){
 
           cout<<"Digite o nome da lâmpada que deseja remover: ";
           cin>>lampada;
@@ -449,16 +470,20 @@ void MenuLampada(Comodo& comodo){
             }
           }
           if(!ex){cout<<"Essa lâmpada não existe!\n";}
-        }
+      }
       
-        comodo.RemoverDispositivo(1,lampada);
+      comodo.RemoverDispositivo(1,lampada);
+      cout << "Lâmpada " << lampada << " removida!";
+      Wait1();
     }
 
 
     //CONFIGURAR TODAS AS LAMPADAS
     if(esc == 5){
-        comodo.ConfigurarTodos(1);
-  }
+      comodo.ConfigurarTodos(1);
+      cout << "Lampadas configuradas!";
+      Wait1();
+    }
 }
 }
 
@@ -491,24 +516,22 @@ void MenuCortina(Comodo& comodo){
 
     // listar as cortinas
     if(esc == 1){
-      bool ex = 0;
-      while(!ex){
-       comodo.ListarDispositivos(2); 
-       cout<< " Digite 1 para voltar: ";
-       cin>> ex;
-      }
-      
+
+      cout <<"Cortinas:"<< endl;
+      comodo.ListarDispositivos(2); 
+      Wait1();
     }
     
     //Configurar uma cortina
     if(esc == 2){
-       cout<<"Cortinas para configurar: \n";
-      comodo.ListarDispositivos(2);
-       string cortina = "";
 
-        // USUÁRIO ESCOLHE A CORTINA QUE QUER ALTERAR
-        bool ex = 0;
-        while(!ex){
+      cout<<"Cortinas para configurar: \n";
+      comodo.ListarDispositivos(2);
+      string cortina = "";
+
+      // USUÁRIO ESCOLHE A CORTINA QUE QUER ALTERAR
+      bool ex = 0;
+      while(!ex){
 
         cout<<"Digite o nome da cortina que deseja configurar: ";
         cin>>cortina;
@@ -519,51 +542,63 @@ void MenuCortina(Comodo& comodo){
             }
           }
           if(!ex){cout<<"Essa cortina não existe!\n";}
-        }
-        int intensidade = 0;
-        //setando a intensidade
-        cout<< "Digite a intensidade da cortina de 0 a 100: ";
-        cin>>intensidade;
-        comodo.cortinas_[cortina].SetIntensidade(intensidade);
+      }
 
+      int intensidade = 0;
+      //setando a intensidade
+      cout<< "Digite a intensidade da cortina de 0 a 100: ";
+      cin>>intensidade;
+      comodo.cortinas_[cortina].SetIntensidade(intensidade);
+      cout << "Cortina " << cortina << " configurada!";
+      Wait1();
     }
 
     //ADICIONAR CORTINA
     if(esc == 3){
+
       string nome = "";
       cout<< "Digite o nome da nova cortina: ";
       cin>> nome;
       comodo.AdicionarDispositivo(2, nome);
+      cout << "Cortina " << nome << " salva!";
+      Wait1();
     }
 
     //REMOVER CORTINA
     if(esc == 4){
+
+      cout <<"Cortinas:"<< endl;
       comodo.ListarDispositivos(2);
-     // USUÁRIO ESCOLHE A CORTINA QUE QUER REMOVER
-        bool ex = 0;
-        string cortina = "";
-        while(!ex){
+      // USUÁRIO ESCOLHE A CORTINA QUE QUER REMOVER
+      bool ex = 0;
+      string cortina = "";
+      while(!ex){
 
         cout<<"Digite o nome da cortina que deseja remover: ";
         cin>>cortina;
       
-          for(auto it : comodo.cortinas_){
-            if(it.first == cortina){
-             ex = 1;
-            }
+        for(auto it : comodo.cortinas_){
+          if(it.first == cortina){
+            ex = 1;
           }
-          if(!ex){cout<<"Essa cortina não existe!\n";}
         }
+        if(!ex){cout<<"Essa cortina não existe!\n";}
+      }
       
-        comodo.RemoverDispositivo(2, cortina);
+      comodo.RemoverDispositivo(2, cortina);
+      cout << "Cortina " << cortina << " removida!";
+      Wait1();
     }
 
 
     //CONFIGURAR TODAS AS CORTINAS
     if(esc == 5){
-        comodo.ConfigurarTodos(2);
+
+      comodo.ConfigurarTodos(2);
+      cout << "Cortinas configuradas!";
+      Wait1();
+    }
   }
-}
 }
 
 void MenuArCondicionado(Comodo& comodo){
@@ -595,55 +630,55 @@ void MenuArCondicionado(Comodo& comodo){
 
     // listar a ar condicionado
     if(esc == 1){
-      bool ex = 0;
-      while(!ex){
-       comodo.ListarDispositivos(3); 
-       cout<< " Digite 1 para voltar: ";
-       cin>> ex;
-      }
-      
+
+      cout << "Ares: " << endl;
+      comodo.ListarDispositivos(3); 
+      Wait1();
     }
     
     //Configurar um ar condicionado
     if(esc == 2){
-       cout<<"Lâmpadas para configurar: \n";
-      comodo.ListarDispositivos(3);
-       string ArCondicionado = "";
 
-        // USUÁRIO ESCOLHE A LAMAPADA QUE QUER ALTERAR
-        bool ex = 0;
-        while(!ex){
+      cout<<"Ares para configurar: \n";
+      comodo.ListarDispositivos(3);
+      string ArCondicionado = "";
+
+      // USUÁRIO ESCOLHE A LAMAPADA QUE QUER ALTERAR
+      bool ex = 0;
+      while(!ex){
 
         cout<<"Digite o nome do ar condicionado que deseja configurar: ";
         cin>>ArCondicionado;
       
-          for(auto it :comodo.ares_condicionados_){
-            if(it.first == ArCondicionado){
-             ex = 1;
-            }
+        for(auto it :comodo.ares_condicionados_){
+          if(it.first == ArCondicionado){
+            ex = 1;
           }
-          if(!ex){cout<<"Esse ar condicionado não existe!\n";}
         }
-        int intensidade = 0;
-        bool ligado = false;
-        string resposta = "";
-        int temperatura = 0;
-        //setando a intensidade
-        cout<< "Digite a intensidade da cortina de 0 a 100: ";
-        cin>>intensidade;
-        comodo.ares_condicionados_[ArCondicionado].SetIntensidade(intensidade);
+        if(!ex){cout<<"Esse ar condicionado não existe!\n";}
+      }
+
+      int intensidade = 0;
+      bool ligado = false;
+      string resposta = "";
+      int temperatura = 0;
+      //setando a intensidade
+      cout<< "Digite a intensidade da cortina de 0 a 100: ";
+      cin>>intensidade;
+      comodo.ares_condicionados_[ArCondicionado].SetIntensidade(intensidade);
         
-        cout<< "Digite se o ar esta ligado ou não (sim ou não) ";
-        cin>>resposta;
-        if(resposta == "SIM" || resposta == "Sim" || resposta == "sim"){
-          ligado = true;
-        }
-        comodo.ares_condicionados_[ArCondicionado].SetLigar(ligado);
-
-        cout<< "Digite a temperatura do Ar Condicionado(de 16 a 30 graus): ";
-        cin>>temperatura;
-        comodo.ares_condicionados_[ArCondicionado].SetTemperatura(temperatura);
-
+      cout<< "Digite se o ar esta ligado ou não (sim ou não) ";
+      cin>>resposta;
+      if(resposta == "SIM" || resposta == "Sim" || resposta == "sim"){
+        ligado = true;
+      }
+      else{ ligado = false; }
+      comodo.ares_condicionados_[ArCondicionado].SetLigar(ligado);
+      cout<< "Digite a temperatura do Ar Condicionado(de 16 a 32 graus): ";
+      cin>>temperatura;
+      comodo.ares_condicionados_[ArCondicionado].SetTemperatura(temperatura);
+      cout << "ArCondicionado " << ArCondicionado << " configurado!";
+      Wait1();
     }
 
     //ADICIONAR AR CONDIONADO
@@ -652,15 +687,20 @@ void MenuArCondicionado(Comodo& comodo){
       cout<< "Digite o nome do novo ar condicionado: ";
       cin>> nome;
       comodo.AdicionarDispositivo(3, nome);
+      cout << "ArCondicionado " << nome << " salvo!";
+      Wait1();
     }
 
     //REMOVER AR CONDICIONADO
     if(esc == 4){
+
+      cout << "Ares:" << endl;
       comodo.ListarDispositivos(3);
-     // USUÁRIO ESCOLHE O AR CONDICIONADO QUE QUER REMOVER
-        bool ex = 0;
-        string ArCondicionado = "";
-        while(!ex){
+
+      // USUÁRIO ESCOLHE O AR CONDICIONADO QUE QUER REMOVER
+      bool ex = 0;
+      string ArCondicionado = "";
+      while(!ex){
 
         cout<<"Digite o nome do ar condicionado que deseja remover: ";
         cin>>ArCondicionado;
@@ -671,17 +711,21 @@ void MenuArCondicionado(Comodo& comodo){
             }
           }
           if(!ex){cout<<"Esse ar condicionado não existe!\n";}
-        }
+      }
       
-        comodo.RemoverDispositivo(2,ArCondicionado);
+      comodo.RemoverDispositivo(2,ArCondicionado);
+      cout << "ArCondicionado " << ArCondicionado << " removido!";
+      Wait1();
     }
 
 
     //CONFIGURAR TODAS OS ARES CONDICIONADOS
     if(esc == 5){
-        comodo.ConfigurarTodos(3);
+      comodo.ConfigurarTodos(3);
+      cout << "Ares Condicionados configurados!";
+      Wait1();
+    }
   }
-}
 }
 
 void MenuTrancas(Comodo& comodo){
@@ -711,85 +755,96 @@ void MenuTrancas(Comodo& comodo){
       Wait1();
     }
 
-    // listar as cortinas
+    // listar as trancas
     if(esc == 1){
-      bool ex = 0;
-      while(!ex){
-       comodo.ListarDispositivos(4); 
-       cout<< " Digite 1 para voltar: ";
-       cin>> ex;
-      }
       
+      cout << "Trancas:" << endl;
+      comodo.ListarDispositivos(4); 
+      Wait1();
     }
     
     //Configurar uma tranca
     if(esc == 2){
-       cout<<"Trancas para configurar: \n";
+
+      cout<<"Trancas para configurar: \n";
       comodo.ListarDispositivos(4);
        string tranca = "";
 
-        // USUÁRIO ESCOLHE A TRANCA QUE QUER ALTERAR
-        bool ex = 0;
-        while(!ex){
+      // USUÁRIO ESCOLHE A TRANCA QUE QUER ALTERAR
+      bool ex = 0;
+      while(!ex){
 
         cout<<"Digite o nome da tranca que deseja configurar: ";
         cin>>tranca;
       
-          for(auto it :comodo.trancas_){
-            if(it.first == tranca){
-             ex = 1;
-            }
+        for(auto it :comodo.trancas_){
+          if(it.first == tranca){
+            ex = 1;
           }
-          if(!ex){cout<<"Essa tranca não existe!\n";}
         }
-        bool trancada = false;
-        string resposta ="";
-        //abrindo ou fechando
-        cout<< "Digite se quer abrir ou fechar a tranca: ";
-        cin>>resposta;
-        if(resposta =="FECHAR" || resposta == "Fechar" || resposta == "fechar" ){
-          trancada = true;
-        }
-        comodo.trancas_[tranca].SetAtiva(trancada);
+        if(!ex){cout<<"Essa tranca não existe!\n";}
+      }
 
+      bool trancada = false;
+      string resposta ="";
+      //abrindo ou fechando
+      cout<< "Digite se quer abrir ou fechar a tranca: ";
+      cin>>resposta;
+      if(resposta =="FECHAR" || resposta == "Fechar" || resposta == "fechar" ){
+        trancada = true;
+      }
+      else { trancada = false; }
+      comodo.trancas_[tranca].SetAtiva(trancada);
+      cout << "Tranca " << tranca << " configurada!";
+      Wait1();
     }
 
     //ADICIONAR TRANCA
     if(esc == 3){
+
       string nome = "";
       cout<< "Digite o nome da nova tranca: ";
       cin>> nome;
       comodo.AdicionarDispositivo(4, nome);
+      cout << "Tranca " << nome << " salva!";
+      Wait1();
     }
 
     //REMOVER TRANCA
     if(esc == 4){
-      comodo.ListarDispositivos(4);
-     // USUÁRIO ESCOLHE A TRANCA QUE QUER REMOVER
-        bool ex = 0;
-        string tranca = "";
-        while(!ex){
 
-        cout<<"Digite o nome da tranca que deseja remover: ";
-        cin>>tranca;
+      cout << "Trancas:" << endl;
+      comodo.ListarDispositivos(4);
+      // USUÁRIO ESCOLHE A TRANCA QUE QUER REMOVER
+      bool ex = 0;
+      string tranca = "";
+      while(!ex){
+
+      cout<<"Digite o nome da tranca que deseja remover: ";
+      cin>>tranca;
       
-          for(auto it : comodo.trancas_){
-            if(it.first == tranca){
-             ex = 1;
-            }
+        for(auto it : comodo.trancas_){
+          if(it.first == tranca){
+            ex = 1;
           }
-          if(!ex){cout<<"Essa tranca não existe!\n";}
         }
-      
-        comodo.RemoverDispositivo(4, tranca);
+        if(!ex){cout<<"Essa tranca não existe!\n";}
+      }
+
+      comodo.RemoverDispositivo(4, tranca);
+      cout << "Tranca " << tranca << " removida!";
+      Wait1();
     }
 
 
     //CONFIGURAR TODAS AS TRANCAS
     if(esc == 5){
-        comodo.ConfigurarTodos(4);
+
+      comodo.ConfigurarTodos(4);
+      cout << "Trancas configuradas!";
+      Wait1();
+    }
   }
-}
 }
 
 void MenuJanelas(Comodo& comodo){
@@ -824,18 +879,16 @@ void MenuJanelas(Comodo& comodo){
 
     // listar as janelas
     if(esc == 1){
-      bool ex = 0;
-      while(!ex){
-       comodo.ListarDispositivos(5); 
-       cout<< " Digite 1 para voltar: ";
-       cin>> ex;
-      }
-      
+
+      cout << "Janelas:" << endl;
+      comodo.ListarDispositivos(5); 
+      Wait1();
     }
     
     //Configurar uma janela
     if(esc == 2){
-      cout<<"Trancas para configurar: \n";
+
+      cout<<"Janelas para configurar: \n";
       comodo.ListarDispositivos(5);
       string janela= "";
 
@@ -848,12 +901,11 @@ void MenuJanelas(Comodo& comodo){
       
         for(auto it :comodo.janelas_){
           if(it.first == janela){
-           ex = 1;
+            ex = 1;
           }
         }
         if(!ex){
           cout<<"Essa janela não existe!\n";
-          Wait1();
         }
       }
 
@@ -868,51 +920,62 @@ void MenuJanelas(Comodo& comodo){
       if(resposta =="FECHAR" || resposta == "Fechar" || resposta == "fechar" ){
         trancada = true;
       }
+      else { trancada = false; }
 
       comodo.janelas_[janela].SetTranca(trancada);
 
       cout<< "Digite a intensidade da janela: ";
       cin>>intensidade;
       comodo.janelas_[janela].SetIntensidade(intensidade);
-
+      cout << "Janela " << janela << " configurada!";
+      Wait1();
     }
 
     //ADICIONAR JANELA
     if(esc == 3){
+
       string nome = "";
       cout<< "Digite o nome da nova janela: ";
       cin>> nome;
       comodo.AdicionarDispositivo(5, nome);
+      cout << "Janela " << nome << " salva!";
+      Wait1();
     }
 
     //REMOVER JANELA
     if(esc == 4){
-      comodo.ListarDispositivos(5);
-     // USUÁRIO ESCOLHE A JANELA QUE QUER REMOVER
-        bool ex = 0;
-        string janela = "";
-        while(!ex){
 
-        cout<<"Digite o nome da janela que deseja remover: ";
-        cin>>janela;
+      cout << "Janelas:" << endl;
+      comodo.ListarDispositivos(5);
+      // USUÁRIO ESCOLHE A JANELA QUE QUER REMOVER
+      bool ex = 0;
+      string janela = "";
+      while(!ex){
+
+      cout<<"Digite o nome da janela que deseja remover: ";
+      cin>>janela;
       
-          for(auto it : comodo.janelas_){
-            if(it.first == janela){
-             ex = 1;
-            }
+        for(auto it : comodo.janelas_){
+          if(it.first == janela){
+            ex = 1;
           }
-          if(!ex){cout<<"Essa janela não existe!\n";}
         }
+        if(!ex){cout<<"Essa janela não existe!\n";}
+      }
       
-        comodo.RemoverDispositivo(5, janela);
+      comodo.RemoverDispositivo(5, janela);
+      cout << "Janela " << janela << " removida!";
+      Wait1();
     }
 
 
     //CONFIGURAR TODAS AS JANELAS
     if(esc == 5){
-        comodo.ConfigurarTodos(5);
+      comodo.ConfigurarTodos(5);
+      cout << "Janelas configuradas!";
+      Wait1();
+    }
   }
-}
 }
 
 //Menu Modos
@@ -926,7 +989,7 @@ void MenuModos(Casa &house){ //tem que criar esse map de modos ainda
     cout<<"  2 - Ativar modo\n";
     cout<<"  3 - Remover modo\n";
     cout<<"  4 - Configurar modo\n";
-    cout<<"  5 - Listar modos\n";
+    cout<<"  5 - Mudar nome de um modo\n";
     cout<<"  6 - Voltar\n";
 
     esc = 0;
@@ -1021,11 +1084,36 @@ void MenuModos(Casa &house){ //tem que criar esse map de modos ainda
         Wait1();
       }
     }
-    //Listar modos
+
+    // Mudar nome de modo
     else if(esc == 5){
-      cout << "Modos disponíveis:" << endl;
-      house.ListarModos();
-      Wait1();
+      
+      string nome_modo;
+      cout << "Digite o nome do modo que deseja configurar: ";
+      cin >> nome_modo;
+
+      bool existe = false;
+      for(auto it : house.modos_){
+        if(it.first == nome_modo){
+          existe = 1;
+        }
+      }
+      if(existe){
+
+        string novo_nome = "";
+        cout<<"Digite o novo nome do modo: ";
+        cin>>novo_nome;
+
+        house.modos_[nome_modo].SetNome(novo_nome);
+        house.modos_[novo_nome] = move(house.modos_[nome_modo]);
+        house.modos_.erase(nome_modo);
+        cout << "Modo " << nome_modo << " renomeado!";
+        Wait1();
+      }
+      else{
+        cout << "Este modo não existe!" << endl;
+        Wait1();
+      }
     }
   }
 }

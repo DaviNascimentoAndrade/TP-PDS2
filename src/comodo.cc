@@ -18,27 +18,27 @@ using namespace std;
     // 
     switch (tipo)
     {
-    // Case = 1, adiciona Lampada  
-    case 1:
+      // Case = 1, adiciona Lampada  
+      case 1:
         lampadas_[nome] = Lampada();
         break;
-    // Case = 2, adiciona Cortina    
-    case 2:
+      // Case = 2, adiciona Cortina    
+      case 2:
         cortinas_[nome] = Cortina();
         break;
-    case 3:
-    // Case = 3, adiciona Ar condicionado
+      case 3:
+      // Case = 3, adiciona Ar condicionado
         ares_condicionados_[nome] = ArCondicionado();
         break;
-    case 4:
-    // Case = 4, adiciona Tranca
+      case 4:
+      // Case = 4, adiciona Tranca
         trancas_[nome] = Tranca();
         break;  
-    case 5:
-    // Case = 5, adiciona Janela
+      case 5:
+      // Case = 5, adiciona Janela
         janelas_[nome] = Janela();
         break;          
-    default:
+      default:
         // Tratamento de exceção do tipo 
         cout<<"Tipo invalido"<<endl;
         break;
@@ -48,49 +48,48 @@ using namespace std;
   void Comodo::ListarDispositivos(int tipo){
     switch (tipo)
     {
-    // Case = 1, imprime todas as Lampadas  
-    case 1:
-        cout<<"Lâmpada:"<<endl;
-         for(auto it : lampadas_){
-            cout <<it.first;
-            cout <<"[intensidade: "<<lampadas_[it.first].Intensidade();
-            cout <<", cor: "<<lampadas_[it.first].Cor()<<"]"<<endl;       
-         }
+      // Case = 1, imprime todas as Lampadas  
+      case 1:
+        for(auto it : lampadas_){
+          cout <<it.first;
+          cout <<" [intensidade: "<<lampadas_[it.first].Intensidade();
+          cout <<", cor: "<<lampadas_[it.first].Cor()<<"]"<<endl;       
+        }
         break;
-     // Case = 2, imprime todas as Cortinas     
+    // Case = 2, imprime todas as Cortinas     
     case 2:
-        cout<<"Cortina:"<<endl;   
+        
         for(auto it : cortinas_){
             cout <<it.first;
-            cout <<"[intensidade: "<<cortinas_[it.first].Intensidade();
+            cout <<" [intensidade: "<<cortinas_[it.first].Intensidade();
             cout <<"]"<<endl;
          }
         break;
     case 3:
      // Case = 3, imprime todos os Ar condicionados
-        cout<<"Ar condicionado:"<<endl;
+        
         for(auto it : ares_condicionados_){
             cout <<it.first;
-            cout <<"[intensidade: "<<ares_condicionados_[it.first].Intensidade();
+            cout <<" [intensidade: "<<ares_condicionados_[it.first].Intensidade();
             cout <<", temperatura: "<<ares_condicionados_[it.first].Temperatura();
             cout <<", status: "<<ares_condicionados_[it.first].Ligado()<<"]"<<endl;
          }
         break;
     case 4:
     // Case = 4, imprime todas as Trancas 
-        cout<<"Tranca:"<<endl; 
+        
         for(auto it : trancas_){
             cout <<it.first;
-            cout <<"[status: "<<trancas_[it.first].Ativa();
+            cout <<" [status: "<<trancas_[it.first].Ativa();
             cout <<"]"<<endl;
          }
         break;  
     case 5:
     // Case = 5, imprime todas as janelas
-        cout<<"Janela:"<<endl;
+        
         for(auto it : janelas_){
             cout <<it.first;
-            cout <<"[intensidade: "<<janelas_[it.first].Intensidade();
+            cout <<" [intensidade: "<<janelas_[it.first].Intensidade();
             cout <<", status da tranca: "<<janelas_[it.first].Tranca()<<"]"<<endl;
          }
         break;          
@@ -145,10 +144,6 @@ using namespace std;
              break;
            }
          }      
-    default:
-    // Tratamento de exceção do tipo 
-        cout<<"Tipo invalido"<<endl;
-        break;
     }
   }
   //Configura todos os dispositivos de um mesmo tipo no comodo, sendo Lampada,Cortina,Arcondicionado,Tranca e Janela, 1,2,3,4 e 5 respectivamente
