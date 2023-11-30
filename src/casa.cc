@@ -36,18 +36,19 @@ void Casa::AtivarModo(string nm){
       }
     }
   if(!existe){
-    cout << "Esse modo não existe" << endl;
+    cout << "Esse modo não existe!" << endl;
     return;
     }
 
     comodos_ = modos_[nm].comodos_;
+    cout << "Modo "<< nm << " ativado!" << endl; 
 
 }
 
 //Lista os Modos presente na Casa
 void Casa::ListarModos(){
   for(auto it = modos_.begin(); it != modos_.end(); it++){
-    cout << it->first;
+    cout << it->first << endl;
   }
 }
 
