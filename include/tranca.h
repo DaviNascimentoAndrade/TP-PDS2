@@ -9,24 +9,24 @@ class Tranca {
 
   public:
 
-// Cria uma traca sem nome
-Tranca();
+    // Cria uma traca sem nome
+    Tranca();
 
-        // Muda o nome da tranca
-        void SetNome(string name);
+    // Muda o nome da tranca
+    void SetNome(string name);
 
-// Retorna o nome da tranca
-string Nome();
+    // Retorna o nome da tranca
+    string Nome();
 
-// Muda estado de ativação da tranca
-void SetAtiva(bool ativo);
+    // Muda estado de ativação da tranca
+    void SetAtiva(bool ativo);
 
-// Retorna estado de ativação da tranca
-bool Ativa();
-    
-private:
-string nome_;
-bool ativa_;
+    // Retorna estado de ativação da tranca
+    bool Ativa();
+        
+  private:
+    string nome_;
+    bool ativa_;
 
 };
 

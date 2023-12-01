@@ -38,7 +38,7 @@ class ArCondicionado {
     //retorna temperatura do ar condicionado
     int Temperatura ();
 
-    private:
+  private:
     int temperatura_;
     bool ligado_;
     int intensidade_;

@@ -5,26 +5,26 @@
 
 using namespace std;
 class Cortina {
-public:
-// Construtor da classe Cortina
-Cortina(); // Construtor
+  public:
+    // Construtor da classe Cortina
+    Cortina(); // Construtor
 
-// Configura a quantidade que a cortina está fechada ou aberta.
-// @param novaIntensidade: A nova intensidade da cortina (0-100).
-void SetIntensidade(int novaIntensidade);
+    // Configura a quantidade que a cortina está fechada ou aberta.
+    // @param novaIntensidade: A nova intensidade da cortina (0-100).
+    void SetIntensidade(int novaIntensidade);
 
-// Retorna o status de iluminação da cortina.
-int Intensidade();
+    // Retorna o status de iluminação da cortina.
+    int Intensidade();
 
-// Retorna o nome da cortina.
-string Nome(); 
+    // Retorna o nome da cortina.
+    string Nome(); 
 
-// Coloca um nome na cortina.
-void SetNome(string novoNome);
+    // Coloca um nome na cortina.
+    void SetNome(string novoNome);
 
-private:
-int intensidade_cortina_;
-string nome_; 
+  private:
+    int intensidade_cortina_;
+    string nome_; 
 };
 
 #endif // CORTINA_H_

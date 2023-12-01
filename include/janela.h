@@ -7,34 +7,34 @@ using namespace std;
 
 class Janela {
 
-public:
+  public:
 
-// cria uma janela sem nome
-Janela();
+    // cria uma janela sem nome
+    Janela();
 
-// muda o nome da janela
-void SetNome(string nm);
+    // muda o nome da janela
+    void SetNome(string nm);
 
-// retorna o nome da janela
-string Nome();
+    // retorna o nome da janela
+    string Nome();
 
-// muda intensidade da abertura da janela
-void SetIntensidade(int in);
+    // muda intensidade da abertura da janela
+    void SetIntensidade(int in);
 
-// retorna intensidade da janela
-int Intensidade();
+    // retorna intensidade da janela
+    int Intensidade();
 
-// muda a tranca da janela (0 aberto)
-void SetTranca(bool tr);
+    // muda a tranca da janela (0 aberto)
+    void SetTranca(bool tr);
 
-// retorna status da tranca da janela
-bool Tranca();
+    // retorna status da tranca da janela
+    bool Tranca();
 
-private:
+  private:
 
-string nome_;
-int intensidade_;
-bool tranca_;
+    string nome_;
+    int intensidade_;
+    bool tranca_;
 };
 
 #endif // JANELA_H_

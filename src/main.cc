@@ -2,12 +2,14 @@
 Menu principal: (feito)
   Comodos
   Modos
+  mudar nome
   Desligar
 
   Comodos: (feito)
-    Adicionar cômodo() (a fazer)
-    Remover cômodo()
     Acessar cômodo
+    Adicionar cômodo()
+    Remover cômodo()
+    Status
     Voltar
 
     Comodo específico:
@@ -17,10 +19,11 @@ Menu principal: (feito)
 
       Dispositivos:
         Lampadas
-        ares_condionados
         cortinas
-        janelas
+        ares_condionados
         trancas
+        janelas
+        voltar
 
         Dispositivo específico:
           Listar
@@ -35,7 +38,7 @@ Menu principal: (feito)
     Ativar modo() - tem na casa
     Remover modo() - criar no main (usar funções do map)
     Configurar modo - usar a função MenuComodos
-    (ListarModos)
+    Mudar nome
     Voltar
 
     IMPORTANTE: quanto criar o modo, passa pra ele só o map dos comodos da casa, e não o map de modos
@@ -134,14 +137,14 @@ int main(){
     // MUDAR NOME
     else if(esc == 3){
       string nm = "";
-      cout<<"Digite o novo nome (não coloque espaçoes em branco): ";
-      cin >> nm;
+      cout<<"Digite o novo nome: ";
+      cin.ignore();
+      getline(cin, nm);
       casa.SetNome(nm);
     }
   }
   return 0;
 }
-
 /*
 =============================================================================
 FUNÇÕES
@@ -168,7 +171,7 @@ void Wait1(){
 void MenuComodos(Casa &house){
 
   int esc = 0;
-  while(esc != 4){
+  while(esc != 5){
 
     esc = 0;
     system("clear");
@@ -176,13 +179,14 @@ void MenuComodos(Casa &house){
     cout<<"  1 - Acessar comodo\n";
     cout<<"  2 - Adicionar comodo\n";
     cout<<"  3 - Remover comodo\n";
-    cout<<"  4 - Voltar\n";
+    cout<<"  4 - Status geral\n";
+    cout<<"  5 - Voltar\n";
 
     esc = 0;
-    while(esc < 1 || esc > 4){
+    while(esc < 1 || esc > 5){
       cout<<"Digite sua escolha: ";
       cin>>esc;
-      if(esc < 1 || esc > 4){
+      if(esc < 1 || esc > 5){
         cout<<"Escolha invalida!"<<endl;
         Wait1();
       }
@@ -206,7 +210,8 @@ void MenuComodos(Casa &house){
         while(!ex){
 
           cout<<"Digite o nome do comodo que deseja acessar: ";
-          cin>>comodo;
+          cin.ignore();
+          getline(cin, comodo);
       
           for(auto it : house.comodos_){
 
@@ -229,7 +234,8 @@ void MenuComodos(Casa &house){
 
       string comodo = "";
       cout <<"Digite o nome do cômodo que deseja adicionar: ";
-      cin>>comodo;
+      cin.ignore();
+      getline(cin, comodo);
       house.AdicionarComodo(comodo);
       house.comodos_[comodo].SetNome(comodo);
       cout << "Comôdo " << comodo << " salvo!";
@@ -251,8 +257,9 @@ void MenuComodos(Casa &house){
         bool ex = 0;
         while(!ex){
 
-        cout<<"Digite o nome do comodo que deseja remover: ";
-        cin>>comodo;
+          cout<<"Digite o nome do comodo que deseja remover: ";
+          cin.ignore();
+          getline(cin, comodo);
       
           for(auto it : house.comodos_){
             if(it.first == comodo){
@@ -266,6 +273,36 @@ void MenuComodos(Casa &house){
       
         house.RemoverComodo(comodo);
         cout << "Cômodo " << comodo << " removido!";
+        Wait1();
+      }
+    }
+
+    // STATUS GERAL
+    else if(esc == 4){
+
+      if(house.comodos_.size() < 1){
+        cout << "Não há nenhum comodo!\n";
+        cout << "Para verificar os status, adicione um comodo com a opção 2!"<< endl;
+        Wait1();
+      }
+      else{
+        
+        cout << "Status geral (Todos os dispositivos em cada comodo):" << endl;
+        for(auto it : house.comodos_){
+          
+          cout<<endl;
+          cout << it.first << ":" << endl;
+          cout << "Lâmpadas:" << endl;
+          it.second.ListarDispositivos(1);
+          cout << "Cortinas:" << endl;
+          it.second.ListarDispositivos(2);
+          cout << "Ares:" << endl;
+          it.second.ListarDispositivos(3);
+          cout << "Trancas:" << endl;
+          it.second.ListarDispositivos(4);
+          cout << "Janelas:" << endl;
+          it.second.ListarDispositivos(5);
+        }
         Wait1();
       }
     }
@@ -301,7 +338,8 @@ void MenuComodo(Casa& house, string comodo){
     else if(esc == 2){
       string novo_nome = "";
       cout<<"Digite o novo nome do comodo: ";
-      cin>>novo_nome;
+      cin.ignore();
+      getline(cin, novo_nome);
       //basicamente cria um novo valor para o map, substitui oq tinha no antigo
       //para o novo e apaga o velho
       house.comodos_[comodo].SetNome(novo_nome);
@@ -412,7 +450,8 @@ void MenuLampada(Comodo& comodo){
       while(!ex){
 
         cout<<"Digite o nome da lâmpada que deseja configurar: ";
-        cin>>lampada;
+        cin.ignore();
+        getline(cin, lampada);
       
         for(auto it : comodo.lampadas_){
           if(it.first == lampada){
@@ -443,7 +482,8 @@ void MenuLampada(Comodo& comodo){
 
       string nome = "";
       cout<< "Digite o nome da nova lâmpada: ";
-      cin>> nome;
+      cin.ignore();
+      getline(cin, nome);
       comodo.AdicionarDispositivo(1, nome);
 
       cout << "Lâmpada " << nome << " salva!";
@@ -461,15 +501,16 @@ void MenuLampada(Comodo& comodo){
       string lampada = "";
       while(!ex){
 
-          cout<<"Digite o nome da lâmpada que deseja remover: ";
-          cin>>lampada;
+        cout<<"Digite o nome da lâmpada que deseja remover: ";
+        cin.ignore();
+        getline(cin, lampada);
       
-          for(auto it : comodo.lampadas_){
-            if(it.first == lampada){
-             ex = 1;
-            }
+        for(auto it : comodo.lampadas_){
+          if(it.first == lampada){
+            ex = 1;
           }
-          if(!ex){cout<<"Essa lâmpada não existe!\n";}
+        }
+        if(!ex){cout<<"Essa lâmpada não existe!\n";}
       }
       
       comodo.RemoverDispositivo(1,lampada);
@@ -484,7 +525,7 @@ void MenuLampada(Comodo& comodo){
       cout << "Lampadas configuradas!";
       Wait1();
     }
-}
+  }
 }
 
 void MenuCortina(Comodo& comodo){
@@ -534,7 +575,8 @@ void MenuCortina(Comodo& comodo){
       while(!ex){
 
         cout<<"Digite o nome da cortina que deseja configurar: ";
-        cin>>cortina;
+        cin.ignore();
+        getline(cin, cortina);
       
           for(auto it :comodo.cortinas_){
             if(it.first == cortina){
@@ -558,7 +600,8 @@ void MenuCortina(Comodo& comodo){
 
       string nome = "";
       cout<< "Digite o nome da nova cortina: ";
-      cin>> nome;
+      cin.ignore();
+      getline(cin, nome);
       comodo.AdicionarDispositivo(2, nome);
       cout << "Cortina " << nome << " salva!";
       Wait1();
@@ -575,7 +618,8 @@ void MenuCortina(Comodo& comodo){
       while(!ex){
 
         cout<<"Digite o nome da cortina que deseja remover: ";
-        cin>>cortina;
+        cin.ignore();
+        getline(cin, cortina);
       
         for(auto it : comodo.cortinas_){
           if(it.first == cortina){
@@ -648,7 +692,8 @@ void MenuArCondicionado(Comodo& comodo){
       while(!ex){
 
         cout<<"Digite o nome do ar condicionado que deseja configurar: ";
-        cin>>ArCondicionado;
+        cin.ignore();
+        getline(cin, ArCondicionado);
       
         for(auto it :comodo.ares_condicionados_){
           if(it.first == ArCondicionado){
@@ -685,7 +730,8 @@ void MenuArCondicionado(Comodo& comodo){
     if(esc == 3){
       string nome = "";
       cout<< "Digite o nome do novo ar condicionado: ";
-      cin>> nome;
+      cin.ignore();
+      getline(cin, nome);
       comodo.AdicionarDispositivo(3, nome);
       cout << "ArCondicionado " << nome << " salvo!";
       Wait1();
@@ -703,7 +749,8 @@ void MenuArCondicionado(Comodo& comodo){
       while(!ex){
 
         cout<<"Digite o nome do ar condicionado que deseja remover: ";
-        cin>>ArCondicionado;
+        cin.ignore();
+        getline(cin, ArCondicionado);
       
           for(auto it : comodo.ares_condicionados_){
             if(it.first == ArCondicionado){
@@ -775,7 +822,8 @@ void MenuTrancas(Comodo& comodo){
       while(!ex){
 
         cout<<"Digite o nome da tranca que deseja configurar: ";
-        cin>>tranca;
+        cin.ignore();
+        getline(cin, tranca);
       
         for(auto it :comodo.trancas_){
           if(it.first == tranca){
@@ -804,7 +852,8 @@ void MenuTrancas(Comodo& comodo){
 
       string nome = "";
       cout<< "Digite o nome da nova tranca: ";
-      cin>> nome;
+      cin.ignore();
+      getline(cin, nome);
       comodo.AdicionarDispositivo(4, nome);
       cout << "Tranca " << nome << " salva!";
       Wait1();
@@ -820,8 +869,9 @@ void MenuTrancas(Comodo& comodo){
       string tranca = "";
       while(!ex){
 
-      cout<<"Digite o nome da tranca que deseja remover: ";
-      cin>>tranca;
+        cout<<"Digite o nome da tranca que deseja remover: ";
+        cin.ignore();
+        getline(cin, tranca);
       
         for(auto it : comodo.trancas_){
           if(it.first == tranca){
@@ -897,7 +947,8 @@ void MenuJanelas(Comodo& comodo){
       while(!ex){
 
         cout<<"Digite o nome da janela que deseja configurar: ";
-        cin>>janela;
+        cin.ignore();
+        getline(cin, janela);
       
         for(auto it :comodo.janelas_){
           if(it.first == janela){
@@ -936,7 +987,8 @@ void MenuJanelas(Comodo& comodo){
 
       string nome = "";
       cout<< "Digite o nome da nova janela: ";
-      cin>> nome;
+      cin.ignore();
+      getline(cin, nome);
       comodo.AdicionarDispositivo(5, nome);
       cout << "Janela " << nome << " salva!";
       Wait1();
@@ -953,7 +1005,8 @@ void MenuJanelas(Comodo& comodo){
       while(!ex){
 
       cout<<"Digite o nome da janela que deseja remover: ";
-      cin>>janela;
+      cin.ignore();
+        getline(cin, janela);
       
         for(auto it : comodo.janelas_){
           if(it.first == janela){
@@ -1013,7 +1066,8 @@ void MenuModos(Casa &house){ //tem que criar esse map de modos ainda
       modo.comodos_ = house.comodos_;
 
       cout << "Digite o nome do modo que deseja criar: ";
-      cin >> nome;
+      cin.ignore();
+      getline(cin, nome);
       modo.SetNome(nome);
       house.modos_[nome] = modo;
 
@@ -1028,7 +1082,8 @@ void MenuModos(Casa &house){ //tem que criar esse map de modos ainda
       cout << "Modos disponíveis:" << endl;
       house.ListarModos();
       cout << "Digite o nome do modo que deseja ativar: ";
-      cin >> nome_modo;
+      cin.ignore();
+      getline(cin, nome_modo);
       house.AtivarModo(nome_modo);
       Wait1();
     }
@@ -1041,7 +1096,8 @@ void MenuModos(Casa &house){ //tem que criar esse map de modos ainda
       house.ListarModos();
 
       cout << "Digite o nome do modo que deseja remover: ";
-      cin >> nome_modo;
+      cin.ignore();
+      getline(cin, nome_modo);
 
       bool existe = false;
       for(auto it : house.modos_){
@@ -1068,7 +1124,8 @@ void MenuModos(Casa &house){ //tem que criar esse map de modos ainda
 
       string nome_modo;
       cout << "Digite o nome do modo que deseja configurar: ";
-      cin >> nome_modo;
+      cin.ignore();
+      getline(cin, nome_modo);
 
       bool existe = false;
       for(auto it : house.modos_){
@@ -1090,7 +1147,8 @@ void MenuModos(Casa &house){ //tem que criar esse map de modos ainda
       
       string nome_modo;
       cout << "Digite o nome do modo que deseja configurar: ";
-      cin >> nome_modo;
+      cin.ignore();
+      getline(cin, nome_modo);
 
       bool existe = false;
       for(auto it : house.modos_){

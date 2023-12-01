@@ -40,6 +40,7 @@ private:
 string nome_;
 string cor_;
 int intensidade_;
-vector<string> cores_ ={"Amarelo", "Vermelho","Azul","Verde","Roxo","Branco","Laranja"};
+vector<string> cores_ ={"Amarelo", "Vermelho","Azul","Verde","Roxo","Branco","Laranja","amarelo"
+,"vermelho","azul","verde","roxo","branco","laranja"};
 };
 #endif // LAMPADA_H_

@@ -32,7 +32,7 @@ void Lampada::SetCor(string c){
   }
   if(!(valido)){
     cout<< "Cor inválida, consulte as cores disponíveis"<<endl;
-}
+  }
 }
 
 string Lampada::Cor() {

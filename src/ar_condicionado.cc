@@ -5,39 +5,50 @@
 
 using namespace std;
 
- ArCondicionado::ArCondicionado(){
- }
- void ArCondicionado::SetNome(string nome){
+ArCondicionado::ArCondicionado(){
+  intensidade_ = 0;
+  temperatura_ = 0;
+  ligado_ = 0;
+}
+
+void ArCondicionado::SetNome(string nome){
   nome_ = nome;
- }
- string ArCondicionado::Nome(){
+}
+
+string ArCondicionado::Nome(){
   return nome_;
- }
- void ArCondicionado::SetIntensidade(int in){
+}
+
+void ArCondicionado::SetIntensidade(int in){
   if(in >= 0 && in <= 100){
-  intensidade_ = in;
+    intensidade_ = in;
   }
   else{
-  cout << "Intensidade inválida, selecione um valor de 0 a 100";
+    cout << "Intensidade inválida, selecione um valor de 0 a 100";
   }
- }
- int ArCondicionado::Intensidade(){
+}
+
+int ArCondicionado::Intensidade(){
   return intensidade_;
- }
- void ArCondicionado::SetLigar(bool li){
+}
+
+void ArCondicionado::SetLigar(bool li){
   ligado_ = li;
- }
- bool ArCondicionado::Ligado(){
+}
+
+bool ArCondicionado::Ligado(){
   return ligado_;
- }
- void ArCondicionado::SetTemperatura(int temp){
+}
+
+void ArCondicionado::SetTemperatura(int temp){
   if(temp > 16 || temp < 32){
-  temperatura_ = temp;
+    temperatura_ = temp;
   }
   else{
-  cout << "Temperatura inválida. Por favor, insira um dos valores válidos";
+    cout << "Temperatura inválida. Por favor, insira um dos valores válidos";
   }
- }
- int ArCondicionado::Temperatura(){
+}
+
+int ArCondicionado::Temperatura(){
   return temperatura_;
- }
+}

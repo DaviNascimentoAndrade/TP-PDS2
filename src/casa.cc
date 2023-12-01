@@ -56,30 +56,29 @@ void Casa::ListarModos(){
 //Adicionar Comodo a Casa 
 void Casa::AdicionarComodo(string nm){
   bool existe = false;             //testa se o nome já é usado no map
-    for(auto it: comodos_){
-      if(it.first == nm){
-        existe = true;
-        cout << "Esse cômodo já existe" <<endl;
-        return;
-      }
+  for(auto it: comodos_){
+    if(it.first == nm){
+      existe = true;
+      cout << "Esse cômodo já existe" <<endl;
+      return;
     }
-    if(!existe){
+  }
+  if(!existe){
     comodos_[nm];  //o map cria um valor apenas com uma chave, desde que ela não exista   
-    }
-    
+  }  
 }
 
 //Remove Comodo da Casa
 void Casa::RemoverComodo(string nm){
- bool existe = false;             //testa se existe
-    for(auto it: comodos_){
-      if(it.first == nm){
-        existe = true;
-        comodos_.erase(nm);
-        return;
-      }
+  bool existe = false;             //testa se existe
+  for(auto it: comodos_){
+    if(it.first == nm){
+      existe = true;
+      comodos_.erase(nm);
+      return;
     }
-    if(!existe){
+  }
+  if(!existe){
     cout << "Esse cômodo não existe";  //o map cria um valor apenas com uma chave, desde que ela não exista   
-    }
+  }
 }
