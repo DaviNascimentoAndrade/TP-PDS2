@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TP-2 Automação residencial: TP-PDS2</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="casa-logotipo_23-2147507198.avif"/></td>
+  <td id="projectalign">
+   <div id="projectname">TP-2 Automação residencial<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Teste</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div><div class="header">
+  <div class="headertitle"><div class="title">TP-PDS2</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="autotoc_md0"></a>Trabalho prático da disciplina PDS2, sistema de automação residencial</p>
+<p>Alunos: Arthur Caetano de Oliveira - 2023039309; Breno Pereira Miranda - 2023038930; Davi Nascimento Andrade da Silva - 2023038817; Lucas Abreu Velloso - 2023038795; Lucas Monteiro Henriques- 2023038868;</p>
+<p>O Manual de estilo ultilizado no projeto pode ser acessado pelo link: <a href="https://google.github.io/styleguide/cppguide.html#C++_Version">https://google.github.io/styleguide/cppguide.html#C++_Version</a></p>
+<ol type="1">
+<li>Apresentação do Problema:</li>
+</ol>
+<p>Nos últimos anos, principalmente durante a pandemia do Covid-19, houve o surgimento e crescimento explosivo da indústria 4.0. Além disso, houve grande desenvolvimento e popularização das tecnologias da informação, que tomaram papéis importantes em todas as áreas de consumo, auxiliando as pessoas a resolverem diversos problemas e a melhorarem a qualidade de vida. Uma das novas aplicações que surgiu nesse crescimento foi a automação residencial, atra- vés de soluções de engenharia de controle e automação, que permite controlar diversos aspectos de uma casa de forma automática, como iluminação, temperatura, segurança, etc.</p>
+<p>A falta de automação residencial pode gerer diversas problematicas como falta de conectividade e personalização , conforto e segurnaça comprometido,além de ineficiencia energetica e consequentimente mais gastos financeiros.</p>
+<p>Tendo em vista a relevância do tópico apresentado e a proximidade com nossa área de estudo no curso, decidimos realizar esse trabalho com o objetivo de desenvolver um sistema de automação residencial, que visa controlar e automatizar vários aspectos de uma casa comum, como controlar ativação de luzes, abertura de cortinas, ar condicionado,criação de modos que empregam o conjunto dessas funcionalidades etc.</p>
+<ol type="1">
+<li>Visão Geral da Solução:</li>
+</ol>
+<p>Nossa solução visa que o usuário consiga controlar , de forma rapida ,facil e totalmente remota, sua casa. O programa ira conseguir controlar,por meio de um menu no terminar, cada objeto separadamente ou de maneira geral tanto no cômodo quanto na casa,todas as entidades do programa possuem classes de objetos que são organizadas segundo a lógica de programação orientada a objeto.</p>
+<ol type="1">
+<li>Estrutura do Projeto:</li>
+</ol>
+<p>O projeto será separado em classes, 7 no total, cada classe irá possuir um arquivo .h (encontrados presente na pasta "include") e um .cc (encontrados na pasta "src"),além de uma main que possui o código referente ao display do menu("encontrado na pasta src).
+
+No própio github é possível analisar a presença de pasta "testes" no qual mostra testes minimalista sobre as funcionalidades presentes nas classe ar_condicionado, cortina ,trancajanela,lampada. Além do uso de um makefile utilizado para compilar o código de maneira mais eficiente e rápida.</p>
+<p>Todos os arquivos necessários e que serão ultilizados ficara disponível no link: <a href="https://github.com/DaviNascimentoAndrade/TP-PDS2">https://github.com/DaviNascimentoAndrade/TP-PDS2</a></p>
+<ol type="1">
+<li>Instruções de Instalação:</li>
+</ol>
+<p>O usuário precisará de: • Ambiente de edição • Compilador(compatível com o sistema operacional do usuário)</p>
+<ol type="1">
+<li>Instruções de Uso:</li>
+</ol>
+<p>O usuário, através de um menu disponibilizado no terminal, terá a oportunidade de interagir com o sistema, empregando números e palavras para realizar diversas transações.</p>
+<p>O usuário terá a capacidade de personalizar individualmente cada dispositivo, podendo alterar seu status por meio das funcionalidades específicas disponibilizadas para cada aparelho, bem como modificar seu nome. Além disso, será possível modificar o status de um grupo de dispositivos similares. Essas funcionalidades são facilmente acessíveis por meio de escolhas simples, utilizando tanto números quanto palavras.</p>
+<p>Além de criar modos pré-determinados pelo úsuario sobre a casa também utilizado palavras e números.</p>
+<ol type="1">
+<li>Principais Dificuldades:</li>
+</ol>
+<p>Entre as dificuldades apresentadas no Tp-2 ,a integração das classes, as descrições dos cartões CRCs, o controle de versão por meio das funcionalidades do GitHub e Git, o tratamento de exceções, e a concepção de um design abrangente na main que incorpore todas as funcionalidades do projeto representam desafios significativos para os colaboradores envolvidos. </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>
